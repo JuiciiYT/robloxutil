@@ -40,6 +40,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#examples">Examples</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -47,6 +48,10 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#installation">Installation</a></li>
+        <ul>
+          <li><a href="#method-1">Method 1</a></li>
+          <li><a href="#method-2">Method 2</a></li>
+        </ul>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
