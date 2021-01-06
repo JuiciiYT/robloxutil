@@ -1,6 +1,3 @@
-
-
-
 <!-- PROJECT SHIELDS -->
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -9,6 +6,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![Version][version-shield]][version-url]
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRobloxUtil%2Frobloxutil.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FRobloxUtil%2Frobloxutil?ref=badge_shield)
 
 
 
@@ -59,6 +57,9 @@
 
 
 <!-- ABOUT THE PROJECT -->
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRobloxUtil%2Frobloxutil.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FRobloxUtil%2Frobloxutil?ref=badge_large)
+
 ## About The Project
 
 **<a href="https://streamable.com/461d95">RobloxUtil Preview</a>**
