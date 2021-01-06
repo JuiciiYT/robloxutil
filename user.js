@@ -1,7 +1,7 @@
 $.getJSON( "./user.json", function( data ) {
     if (data.success === false) {
       $.getJSON( "./result.json", function( result ) {  
-          document.getElementById("rbx-info").innerHTML = `<div id="code">Please enter a valid Roblox Username<br>Reload the app, and try again.<br>If this issue persists email <a href="mailto:robloxutil@gmail.com?subject=[ISSUE] Roblox User Grabber&body=%5BError%20Info%5D%0A%0ARoblox%20Username%3A%20${result.input}%0AError%20Type%3A%201%0ADevice%3A%20${window.navigator.appVersion}%0A%0A%5BUser%20Info%5D%0A%0A">juiciiofficial@gmail.com</a>.</pre>`;
+          document.getElementById("rbx-info").innerHTML = `<div id="code">Please enter a valid Roblox Username<br>Reload the app, and try again.<br>If this issue persists email <a href="mailto:robloxutil@gmail.com?subject=[ISSUE] Roblox User Grabber&body=%5BError%20Info%5D%0A%0ARoblox%20Username%3A%20${result.input}%0AError%20Type%3A%201%0ADevice%3A%20${window.navigator.appVersion}%0A%0A%5BUser%20Info%5D%0A%0A">robloxutil@gmail.com</a>.</pre>`;
       })
     } else {
       let str = ``;
