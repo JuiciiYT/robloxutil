@@ -23,7 +23,7 @@
   <h3 align="center">RobloxUtil</h3>
 
   <p align="center">
-    An electron app which gets the information of a Roblox user.
+    An electron app which can be used for various Roblox Utilities.
     <br />
     <a href="https://github.com/JuiciiYT/robloxutil/issues">Report Bug</a>
     ·
