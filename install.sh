@@ -5,7 +5,7 @@ start=`date +%s`
 git clone https://github.com/RobloxUtil/robloxutil.git &
 cd robloxutil &
 npm install &
-
+clear &
 while [ $count -lt $total ]; do
   sleep 0.5 # this is work
   cur=`date +%s`
