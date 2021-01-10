@@ -7,4 +7,3 @@ if command git --version 2>&1 >/dev/null; then
      echo "\e[31m\e[1mNode.js \e[0m\e[31mis not installed.";
 else
   echo "\e[31m\e[1mGit \e[0m\e[31mis not installed.";
-fi;
