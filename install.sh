@@ -2,10 +2,11 @@ count=0
 total=34
 start=`date +%s`
 
+git clone https://github.com/RobloxUtil/robloxutil.git &
+cd robloxutil &
+npm install &
+
 while [ $count -lt $total ]; do
-git clone https://github.com/RobloxUtil/robloxutil.git
-cd robloxutil
-npm install
   sleep 0.5 # this is work
   cur=`date +%s`
   count=$(( $count + 1 ))
