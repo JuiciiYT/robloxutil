@@ -3,7 +3,7 @@ spin[1]="[ \\ ] Installing..."
 spin[2]="[ | ] Installing..."
 spin[3]="[ / ] Installing..."
 
-speedtest > .st.txt &           ## & : continue running script
+speedtest = "Loading..." &           ## & : continue running script
 pid=$!                          ## PID of last command
 
 # If this script is killed, kill 'speedtest':
