@@ -4,13 +4,13 @@ spin[2]="[ | ] Installing..."
 spin[3]="[ / ] Installing..."
 
 while true; do
-  echo -n "${spin[0]}"
+  echo "${spin[0]}"
   sleep 1
-  echo -n "${spin[1]}"
+  echo "${spin[1]}"
   sleep 1
-  echo -n "${spin[2]}"
+  echo "${spin[2]}"
   sleep 1
-  echo -n "${spin[3]}"
+  echo "${spin[3]}"
   sleep 1
 done
 
