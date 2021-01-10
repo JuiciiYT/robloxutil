@@ -13,5 +13,5 @@ while IFS=, read -r _ col1 col2 col3; do
     echo -ne "\r[${BAR:0:$i}${FILL:$i:barLen}] $count/$totalLines ($percent%)"
 
     # other stuff
-    (...)
-done git clone https://github.com/RobloxUtil/robloxutil.git && cd robloxutil && npm install && echo -e "\e[32m[ ✔ ]\e[m \e \e[1mRobloxUtil \e[0mwas successfully installed."
+    git clone https://github.com/RobloxUtil/robloxutil.git && cd robloxutil && npm install && echo -e "\e[32m[ ✔ ]\e[m \e \e[1mRobloxUtil \e[0mwas successfully installed."
+done
