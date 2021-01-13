@@ -1,3 +1,4 @@
+// Add Dots
 var dots = window.setInterval( function() {
     var wait = document.getElementById("wait");
       if ( wait.innerHTML.length > 2 ) 
