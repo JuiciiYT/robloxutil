@@ -1,4 +1,5 @@
-.sidenav-trigger {
+/* Change notch for mac */
+  .sidenav-trigger {
     top: 11px;
     margin-left: 15px!important;
   }
