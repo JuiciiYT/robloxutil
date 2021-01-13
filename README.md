@@ -16,7 +16,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/JuiciiYT/robloxutil">
+  <a href="https://github.com/RobloxUtil/robloxutil">
     <img src="https://svgshare.com/i/SqS.svg" alt="Logo" width="80" height="80">
   </a>
 
@@ -25,9 +25,9 @@
   <p align="center">
     An electron app which can be used for various Roblox Utilities.
     <br />
-    <a href="https://github.com/JuiciiYT/robloxutil/issues">Report Bug</a>
+    <a href="https://github.com/RobloxUtil/robloxutil/issues">Report Bug</a>
     ·
-    <a href="https://github.com/JuiciiYT/robloxutil/issues">Request Feature</a>
+    <a href="https://github.com/RobloxUtil/robloxutil/issues">Request Feature</a>
   </p>
 </p>
 
@@ -93,7 +93,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/JuiciiYT/robloxutil.git
+   git clone https://github.com/RobloxUtil/robloxutil.git
    ```
 2. Install NPM packages
    ```sh
@@ -114,7 +114,7 @@ To get a local copy up and running follow these simple steps.
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/JuiciiYT/robloxutil/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/RobloxUtil/robloxutil/issues) for a list of proposed features (and known issues).
 
 <!-- LICENSE -->
 ## License
@@ -128,7 +128,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Twitter - [@juicii_official](https://twitter.com/juicii_official)
 
-Project Link: [https://github.com/JuiciiYT/robloxutil](https://github.com/JuiciiYT/robloxutil)
+Project Link: [https://github.com/RobloxUtil/robloxutil](https://github.com/RobloxUtil/robloxutil)
 
 ## Acknowledgements
 * [Img Shields](https://shields.io)
@@ -138,17 +138,17 @@ Project Link: [https://github.com/JuiciiYT/robloxutil](https://github.com/Juicii
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/JuiciiYT/robloxutil.svg?style=for-the-badge
-[contributors-url]: https://github.com/JuiciiYT/robloxutil/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/JuiciiYT/robloxutil.svg?style=for-the-badge
-[forks-url]: https://github.com/JuiciiYT/robloxutil/network/members
-[stars-shield]: https://img.shields.io/github/stars/JuiciiYT/robloxutil.svg?style=for-the-badge
-[stars-url]: https://github.com/JuiciiYT/robloxutil/stargazers
-[issues-shield]: https://img.shields.io/github/issues/JuiciiYT/robloxutil.svg?style=for-the-badge
-[issues-url]: https://github.com/JuiciiYT/robloxutil/issues
-[license-shield]: https://img.shields.io/github/license/JuiciiYT/robloxutil.svg?style=for-the-badge
-[license-url]: https://github.com/JuiciiYT/robloxutil/blob/master/LICENSE.txt
-[version-shield]: https://img.shields.io/github/package-json/v/JuiciiYT/robloxutil.svg?style=for-the-badge
-[version-url]: https://github.com/JuiciiYT/robloxutil/blob/master/package.json
-[last-commit]: https://img.shields.io/github/last-commit/JuiciiYT/robloxutil.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/RobloxUtil/robloxutil.svg?style=for-the-badge
+[contributors-url]: https://github.com/RobloxUtil/robloxutil/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/RobloxUtil/robloxutil.svg?style=for-the-badge
+[forks-url]: https://github.com/RobloxUtil/robloxutil/network/members
+[stars-shield]: https://img.shields.io/github/stars/RobloxUtil/robloxutil.svg?style=for-the-badge
+[stars-url]: https://github.com/RobloxUtil/robloxutil/stargazers
+[issues-shield]: https://img.shields.io/github/issues/RobloxUtil/robloxutil.svg?style=for-the-badge
+[issues-url]: https://github.com/RobloxUtil/robloxutil/issues
+[license-shield]: https://img.shields.io/github/license/RobloxUtil/robloxutil.svg?style=for-the-badge
+[license-url]: https://github.com/RobloxUtil/robloxutil/blob/master/LICENSE.txt
+[version-shield]: https://img.shields.io/github/package-json/v/RobloxUtil/robloxutil.svg?style=for-the-badge
+[version-url]: https://github.com/RobloxUtil/robloxutil/blob/master/package.json
+[last-commit]: https://img.shields.io/github/last-commit/RobloxUtil/robloxutil.svg?style=for-the-badge
 [product-preview]: https://s8.gifyu.com/images/Screen-Recording-2021-01-04-at-1.gif
