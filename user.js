@@ -1,17 +1,25 @@
+// Variables
+let str = ``;
+let str1 = ``;
+let str2 = ``;
+let str3 = ``;
+
+// Get JSON
 $.getJSON( "./user.json", function( data ) {
+    // If Invalid then...
     if (data.success === false) {
       $.getJSON( "./result.json", function( result ) {  
+          //Show false message
           document.getElementById("rbx-info").innerHTML = `<div id="code">Please enter a valid Roblox Username<br>Reload the app, and try again.<br>If this issue persists email <a href="mailto:robloxutil@gmail.com?subject=[ISSUE] Roblox User Grabber&body=%5BError%20Info%5D%0A%0ARoblox%20Username%3A%20${result.input}%0AError%20Type%3A%201%0ADevice%3A%20${window.navigator.appVersion}%0A%0A%5BUser%20Info%5D%0A%0A">robloxutil@gmail.com</a>.</pre>`;
       })
     } else {
-      let str = ``;
-      let str1 = ``;
-      let str2 = ``;
-      let str3 = ``;
+      // Write to Variables
       data.friends.friends.forEach(el=>str+=el+"<br>");
       data.groups.groups.forEach(el=>str1+=el+"<br>");
       data.games.games.forEach(el=>str2+=el+"<br>");
       data.avatar.items.items.forEach(el=>str3+=el+"<br>");
+       
+      // Write to HTML files
       document.getElementById("rbx-info").innerHTML = `Username: <strong>${data.username}</strong>.<br>ID: <strong>${data.id}</strong>.<br>Friends Count: <strong>${data.friends.count}</strong>.&nbsp;<a href="#modal1" class="modal-trigger">View all</a><br>Last Online: <strong>${data.last_online}</strong>.<br>Status: <strong>${data.status}</strong>.<br>Followers: <strong>${data.followers.count}</strong>.<br>Following: <strong>${data.following.count}</strong>.<br>Games: <strong>${data.games.count}</strong>.&nbsp;<a href="#modal3" class="modal-trigger">View all</a><br>Groups: <strong>${data.groups.count}</strong>.&nbsp;<a href="#modal2" class="modal-trigger">View all</a><br>Avatar Items: <strong>${data.avatar.items.amount}</strong>.&nbsp;<a href="#modal4" class="modal-trigger">View all</a><br>Image Link: <strong><a href="#" onclick="window.open('${data.avatar.link}')">${data.avatar.link}</a></strong>.`;
       document.getElementById("user").innerHTML = `<img class="circle" src="https://www.roblox.com/headshot-thumbnail/image?userId=${data.id}&width=60&height=60&format=png">`;
       document.getElementById("rbx-img").innerHTML = `<img class="materialboxed responsive-img" src="https://www.roblox.com/avatar-thumbnail/image?userId=${data.id}&width=352&height=352&format=png">`;
@@ -26,7 +34,7 @@ $.getJSON( "./user.json", function( data ) {
   });
   
   
-  
+    // Open Roblox Acc. in browser
     function myFunction() {
       var shell = require('electron').shell;
       event.preventDefault();
