@@ -1,9 +1,12 @@
+/* Import Fonts */
+
 @font-face{
-    src: url(/Fonts/MonoLisa/MonoLisa-Bold.otf);
+    src: url(./Fonts/MonoLisa/MonoLisa-Bold.otf);
     font-family: MonoLisa;
     font-weight: bold;
 }
 
+/* Change Aligning */
 
 .sidenav-trigger{
     top:11px;
@@ -31,9 +34,13 @@ nav{
     padding-top:100%!important;
 }
 
+/* Always show sidenav trigger */
+
 .sidenav-trigger{
     display:block!important;
 }
+
+/* Font */
 
 #code{
     font-family:MonoLisa;
@@ -41,6 +48,7 @@ nav{
 }
 
 
+/* Dark Mode */
   @media (prefers-color-scheme: dark) {
     body { background:  #23272A; color: white; }
     .sidenav {background: #2C2F33!important; }
