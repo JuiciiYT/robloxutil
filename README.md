@@ -50,7 +50,6 @@
         <li><a href="#installation">Installation</a></li>
         <ul>
           <li><a href="#method-1">Method 1</a></li>
-          <li><a href="#method-2">Method 2</a></li>
         </ul>
       </ul>
     </li>
@@ -93,7 +92,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/RobloxUtil/robloxutil.git
+   git clone https://github.com/RobloxUtil/robloxutil.git && cd robloxutil
    ```
 2. Install NPM packages
    ```sh
@@ -103,12 +102,6 @@ To get a local copy up and running follow these simple steps.
    ```sh
    npm start
    ```
-
-#### Method 2
-
-1. Go to Releases
-
-2. Download the version for your system
 
 
 <!-- ROADMAP -->
