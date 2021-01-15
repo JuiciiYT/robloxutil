@@ -20,10 +20,6 @@ const prompt                                                                    
 const fs                                                                                       = require('fs')
 const menu                                                                                     = new Menu()
 const getUser                                                                                  = require("roblox-user-information")
-const tfa                                                                                      = require('2fa');
-
-
-
 
 // APP FUNCTIONS
 app.whenReady().then(() => {
