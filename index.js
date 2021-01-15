@@ -20,6 +20,7 @@ const prompt                                                                    
 const fs                                                                                       = require('fs')
 const menu                                                                                     = new Menu()
 const getUser                                                                                  = require("roblox-user-information")
+const RPC                                                                                      = require("discord-rich-presence")("799757326738259968")
 
 // APP FUNCTIONS
 app.whenReady().then(() => {
@@ -119,6 +120,16 @@ function createWindow () {
             const username = new TouchBarLabel({ label: 'Username: ' + r })
             const issue = new TouchBarButton({ label: 'Report an issue', backgroundColor: '#FF0000', click: () => { shell.openExternal(`mailto:robloxutil@gmail.com?subject=[ISSUE] Roblox User Grabber&body=%5BError%20Info%5D%0A%0ARoblox%20Username%3A%20${r}%0AError%20Type%3A%202%0ADevice%3A%20MacOS%0A%0A%5BUser%20Info%5D%0A%0A`)}})
             const touchBar = new TouchBar({ items: [ username, new TouchBarSpacer({ size: 'small' }), issue ] })
+
+            //RPC
+            RPC.updatePresence({
+              state: 'Looking at a user',
+              details: r,
+              startTimestamp: Date.now(),
+              largeImageKey: 'icon',
+              smallImageKey: 'electron',
+              instance: true,
+            });
 
             // WRITE JSON FILES AND LOAD THE DONE SCREEN
             fs.writeFile('./result.json', `{ "input": "${r}" }`, (err) => { if (err) throw err })
