@@ -18,10 +18,16 @@
   "win": {
     "icon": "./windows.png"
   },
-  "keywords": [ "electron", "roblox", "api", "username" ],
+  "keywords": [
+    "electron",
+    "roblox",
+    "api",
+    "username"
+  ],
   "author": "JuiciiYT",
   "license": "MIT",
   "dependencies": {
+    "2fa": "^0.1.2",
     "electron": "^11.1.1",
     "electron-prompt-redux": "^1.6.0",
     "roblox-user-information": "^1.0.0"

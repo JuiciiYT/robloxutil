@@ -1,110 +1,282 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>Roblox Info Grabber</title>
-      <!-- CSS -->
-      <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-      <div id="macos"></div>
-      <!-- JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <script src="https://code.jquery.com/jquery-1.7.1.js"></script>
-      <script src="./inject.js"></script>
-      <script src="./materialize.js"></script>
-      <script src="user.js"></script>
-   </head>
-   <body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <title>Spectakular_YT | RobloxUtil</title>
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      href="https://tr.rbxcdn.com/944b783f5e4d781fde088b87e14286ac/352/352/AvatarHeadshot/Png"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+    <div id="macos"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.7.1.js"></script>
+    <script src="https://kit.fontawesome.com/eb84d536b6.js" crossorigin="anonymous"></script>
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="./inject.js"></script>
+    <script src="./user.js"></script>
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <div class="">
       <!-- NAVBAR -->
       <nav class="orange">
-         <div class="higher"></div>
-         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a></div>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"
+          ><i class="material-icons white-text">menu</i></a
+        >
       </nav>
+    </div>
+    <ul id="slide-out" class="sidenav">
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <div id="output"><img src="https://images.unsplash.com/photo-1488905373347-189b5464fd44?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=130"></div>
+          </div>
+          <a href="#user" id="headshot"></a>
+          <a href="#name"><span class="white-text name">John Doe</span></a>
+          <a href="#email"
+            ><span class="white-text email">jdandturk@gmail.com</span></a
+          >
+        </div>
+      </li>
+      <li>
+        <a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a>
+      </li>
+      <li><a href="#!">Second Link</a></li>
+      <li><div class="divider"></div></li>
+      <li><a class="subheader">Other</a></li>
+      <li><a class="waves-effect modal-trigger" href="#modal1">Change Sidenav BG</a></li>
+    </ul>
 
-      <!-- SIDENAV -->
-      <ul id="slide-out" class="sidenav">
-         <li>
-            <div class="user-view">
-               <div class="background">
-                  <!-- BACKGROUND IMG -->
-                  <img src="https://images.unsplash.com/photo-1609601470014-5754ed429f30?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80">
-               </div>
-               <!-- USER HEADSHOT IMG -->
-               <a href="#user" id="user">
-                 <img class="circle" src="https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png">
-               </a>
+    <!-- CONTAINER & ROW-->
+    <div class="container">
+      <!-- USERNAME -->
+      <h2 class="h4">
+        <strong id="username">Invalid Username</strong>
+      </h2>
 
-               <!-- USERNAME -->
-               <a href="#name" id="name">
-                  <div class="white-text name">Not a valid user</div>
-               </a>
-
-               <!-- LAST ONLINE -->
-               <a href="#email" id="email">
-                  <div class="white-text email">Reload the app.</div>
-               </a>
-            </div>
-         </li>
-         <!-- REDIRECT TO ROBLOX PROFILE -->
-         <span id="rbx-goto">
-            <li><a href="#!" class="whiters"><i class="material-icons whiters">exit_to_app</i>Go to Roblox Account</a></li>
-         </span>
-         <li><a class="subheader whiters">Project by 𝙹𝚞𝚒𝚌𝚒𝚒𝙾𝚏𝚏𝚒𝚌𝚒𝚊𝚕#5169</a></li>
-      </ul>
+      <!-- USER STATUS-->
       <div class="row">
-         <!-- ROBLOX USER INFO-->
-         <p id="rbx-info" class="col s6"></p>
+        <div class="col s4">
+          <div class="card ssa">
+            <div class="card-image">
+              <div id="avatar"></div>
+            </div>
+            <div class="card-content center" id="status1">
+              Online right now.
+            </div>
 
-         <!-- ROBLOX USER IMG -->
-         <p id="rbx-img" class="col s6">
-            <img class="materialboxed responsive-img" src="noimg.png">
-         </p>
-      </div>
-
-      <!-- MODAL 1 -->
-      <div id="modal1" class="modal">
-        <div class="modal-content">
-           <h4 id="header">All Friends</h4>
-           <p id="content"></p>
+            <!-- STATUS COLOR -->
+            <div class="progress" id="status2">
+              <div class="determinate green" style="width:100%;"></div>
+            </div>
+          </div>
         </div>
-        <div class="modal-footer">
-           <a href="#!" class="modal-close waves-effect waves-orange btn-flat">OK</a>
+
+        <!-- ROBLOX PROFILE-->
+        <div class="col s8">
+          <div class="card">
+            <h5 class="padtop">Roblox Profile <i class="material-icons">account_circle</i></h5>
+            <div class="card-content">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>ID</td>
+                    <td id="id">You</td>
+                  </tr>
+                  <tr>
+                    <td>Friends</td>
+                    <td id="friends">know</td>
+                  </tr>
+                  <tr>
+                    <td>Following</td>
+                    <td id="following">the</td>
+                  </tr>
+                  <tr>
+                    <td>Followers</td>
+                    <td id="followers">rules</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-     </div>
 
-      <!-- MODAL 2 -->
-      <div id="modal2" class="modal">
-         <div class="modal-content">
-            <h4 id="header">All Groups</h4>
-            <p id="content1" class="black-text"></p>
-         </div>
-         <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-orange btn-flat fixed">OK</a>
-         </div>
+        <!-- USERNAME HISTORY-->
+
+        <div class="col s8">
+          <div class="card first">
+            <h5 class="padtop">Username History <i class="material-icons">history</i></h5>
+            <div class="card-content">
+              <p id="username-history">
+                
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- MODAL 3 -->
-      <div id="modal3" class="modal">
-         <div class="modal-content">
-            <h4 id="header">All Games</h4>
-            <p id="content2" class="black-text"></p>
-         </div>
-         <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-orange btn-flat fixed">OK</a>
-         </div>
-      </div>
+      <!--INFO-->
+      <div class="row bottom">
+        <div class="col s12">
+        <div class="card">
+          <div class="divider-vert">
+  
+          </div>
+        <div class="col s4">
+            <h5 class="padtop">Information <i class="material-icons">insert_chart</i></h5>
+            <div class="card-content">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Location</td>
+                    <td id="location"><span id="flag"><i class="em em-flag-gb"></i></span> United Kingdom</td>
+                  </tr>
+                  <tr>
+                    <td>Accounts</td>
+                    <td id="accounts"><i class="fab fa-discord blurple-text"></i>&nbsp;<i class="fab fa-reddit-square orange-text"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-      <!-- MODAL 4 -->
-      <div id="modal4" class="modal">
-         <div class="modal-content">
-            <h4 id="header">All Items Equipped</h4>
-            <p id="content3" class="black-text"></p>
-         </div>
-         <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-orange btn-flat fixed">OK</a>
-         </div>
-      </div>
+        <!-- Friends -->
+        <div class="col s8">
+            <h5 class="padtop">Friends <i class="material-icons">accessibility_new</i></h5>
 
-   </body>
+            <div class="card-content">
+              <div class="chip">
+                <img
+                  src="https://www.roblox.com/headshot-thumbnail/image?userId=1816015877&width=60&height=60&format=png"
+                  alt="Contact Person"
+                />
+                ionwarrior123
+              </div>
+              <div class="chip">
+                <img
+                  src="https://www.roblox.com/headshot-thumbnail/image?userId=540318626&width=60&height=60&format=png"
+                  alt="Contact Person"
+                />
+                cracon999
+              </div>
+              <div class="chip">
+                <img
+                  src="https://www.roblox.com/headshot-thumbnail/image?userId=1816000989&width=60&height=60&format=png"
+                  alt="Contact Person"
+                />
+                No0dles_s
+              </div>
+              <div class="chip">
+                <img
+                  src="https://www.roblox.com/headshot-thumbnail/image?userId=1163257209&width=60&height=60&format=png"
+                  alt="Contact Person"
+                />
+                EnderMox2
+              </div>
+              <div class="chip">
+                <img
+                  src="https://www.roblox.com/headshot-thumbnail/image?userId=1758156951&width=60&height=60&format=png"
+                  alt="Contact Person"
+                />
+                kingdondon96
+              </div>
+              <div class="chip">
+                <img
+                  src="https://www.roblox.com/headshot-thumbnail/image?userId=1720436643&width=60&height=60&format=png"
+                  alt="Contact Person"
+                />
+
+                imbadinarsenal_99
+              </div>
+              <div class="chip">
+                <img
+                  src="https://www.roblox.com/headshot-thumbnail/image?userId=1588370148&width=60&height=60&format=png"
+                  alt="Contact Person"
+                />
+                Xdevil_blueX
+              </div>
+              <div class="chip">
+                <img
+                  src="https://www.roblox.com/headshot-thumbnail/image?userId=1260680868&width=60&height=60&format=png"
+                  alt="Contact Person"
+                />
+                Xxaland366xX
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
 </html>
+
+<div id="modal1" class="modal">
+   <div class="modal-content">
+      <h4 class="black-text">Add Image URL</h4>
+           <div class="input-field">
+             <input id="email_inline" type="url" class="validate">
+             <label for="email_inline">Image URL</label>
+             <span class="helper-text" data-error="Enter Valid URL" data-success=""></span>
+           </div>
+         </div>
+   <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-orange orange-text btn-flat">CANCEL</a><a href="#!" onclick="finished()" class="modal-close waves-effect waves-orange orange-text btn-flat">DONE</a>
+   </div>
+ </div>
+
+ <script>
+      function includeHTML() {
+    var z, i, elmnt, file, xhttp;
+    /* Loop through a collection of all HTML elements: */
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+      elmnt = z[i];
+      /*search for elements with a certain atrribute:*/
+      file = elmnt.getAttribute("w3-include-html");
+      if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4) {
+            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+            /* Remove the attribute, and call this function once more: */
+            elmnt.removeAttribute("w3-include-html");
+            includeHTML();
+          }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+      }
+    }
+  }
+
+  
+
+  includeHTML()
+
+  function finished() {
+     const response = document.getElementById("email_inline")
+     document.getElementById("output").innerHTML = `<img src="${response.value}">`
+  }
+
+ </script>

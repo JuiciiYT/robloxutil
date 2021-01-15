@@ -20,6 +20,10 @@ const prompt                                                                    
 const fs                                                                                       = require('fs')
 const menu                                                                                     = new Menu()
 const getUser                                                                                  = require("roblox-user-information")
+const tfa                                                                                      = require('2fa');
+
+
+
 
 // APP FUNCTIONS
 app.whenReady().then(() => {
@@ -39,7 +43,7 @@ app.on('activate', () => {
     createWindow()
   }
 })
-
+/*
 // MENU ITEMS and COMMANDS
 menu.append(new MenuItem({
   label: 'RobloxUtil',
@@ -79,7 +83,7 @@ menu.append(new MenuItem({
 
 // ADD THE MENU
 Menu.setApplicationMenu(menu)
-
+*/
 // CREATE WINDOW FUNCTION
 function createWindow () {
 
@@ -96,8 +100,8 @@ function createWindow () {
   .then((r) => {
     // VARIABLE FOR WINDOW
     const win = new BrowserWindow({
-      width: 800,
-      height: 600,
+      width: 1500,
+      height: 971,
       titleBarStyle: 'hiddenInset',
       webPreferences: {
         nodeIntegration: true
@@ -123,7 +127,7 @@ function createWindow () {
             // WRITE JSON FILES AND LOAD THE DONE SCREEN
             fs.writeFile('./result.json', `{ "input": "${r}" }`, (err) => { if (err) throw err })
             fs.writeFile('./user.json', JSON.stringify(user), (err) => { if (err) throw err; win.loadFile("done.html")})
-            setTimeout(function(){ win.loadFile('index.html'); win.setTouchBar(touchBar) }, 5000);
+            setTimeout(function(){ win.loadFile('index.html'); win.setTouchBar(touchBar) }, 6000);
         })
       })()  
     }

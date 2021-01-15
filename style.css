@@ -1,53 +1,119 @@
-/* Import Fonts */
-
-@font-face{
-    src: url(./Fonts/MonoLisa/MonoLisa-Bold.otf);
-    font-family: MonoLisa;
-    font-weight: bold;
-}
-
-/* Change Aligning */
-
-.sidenav-trigger{
-    top:11px;
-    margin-left:15px!important;
-}
-
-nav{
-    height:70px!important;
-}
-
-.sidenav .circle{
-    margin-top:20px!important;
-    left:0!important;
-    padding-left:0!important;
-    margin-left:0!important;
-    background-color:rgb(127, 127, 131);
-}
-
-#rbx-info{
-    padding-left: 20px;
-}
-
-.subheader{
-    position: relative;
-    padding-top:100%!important;
-}
-
-/* Always show sidenav trigger */
-
-.sidenav-trigger{
+.padtop{
+    padding-top:20px;
+  }
+  
+  .padpx h4{
+    padding-left:6px;
+    padding-right:6px;
+  }
+  
+  .h4{
+    padding-left:10px;
+  }
+  
+  body{
+    color:white;
+  }
+  
+  .card{
+    background:#2C2F33;
+    color:white;
+    border-radius:5px;
+  }
+  
+  .card h5{
+    padding-left:25px;
+  }
+  
+  
+  
+  .progress{
+    overflow:hidden!important;
+  }
+  
+  #id, #friends, #following, #followers{
+    text-align:right!important;
+  }
+  
+  .card-content table{
+    border-collapse:separate!important;
+  }
+  
+  .card-content table td{
+      padding:4px!important;
+  }
+  
+  nav{
+    position:relative;
+  }
+  
+  .navbar-fixed{
+    position: sticky;
+    top: 0;
+    height: 60px;
+  }
+  
+  .navbar-fixed--scrolled {
+    /* change background-color to whatever you want */
+    background-color: grey;
+  }
+  
+  nav.scrolled{
+    background:white!important;
+  }
+  
+  .sidenav-trigger{
     display:block!important;
-}
-
-/* Font */
-
-#code{
-    font-family:MonoLisa;
-    font-weight:bold;
-}
-
-
+  }
+  
+  html{
+    font-family:Roboto!important;
+  }
+  
+  .sidenav{
+    will-change: none!important;
+  }
+  
+  .blurple{
+    background:#7289DA;
+  }
+  
+  .blurple-text{
+    color:#7289DA;
+  }
+  
+  h5 .material-icons{
+    transform: translate(0%, 15%);
+  }
+  
+  html{
+    overflow: scroll;
+  }
+  
+  .first{
+    height:200%!important;
+  }
+  
+  .bottom .card{
+    height:300px!important;
+  }
+  
+  .bottom .divider-vert{
+      position:absolute;
+      left:30%;
+      top:10%;
+      bottom:10%;
+      border-left:1px solid #e0e0e0;
+  }
+  
+  .divider-vert{
+    position:absolute;
+      left:50%;
+      top:10%;
+      bottom:10%;
+      border-left:1px solid #e0e0e0;
+  }
+  
 /* Dark Mode */
   @media (prefers-color-scheme: dark) {
     body { background:  #23272A; color: white; }
@@ -60,4 +126,13 @@ nav{
   
   @media (prefers-color-scheme: light) {
     body { background:  #fff; color: black; }
+  }
+
+  .ssa{
+      width:100%!important;
+      height:100%!important;
+  }
+
+  .card #avatar{
+      padding-top:30px;
   }
