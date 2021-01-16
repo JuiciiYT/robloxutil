@@ -38,9 +38,12 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow()
+    RPC.updatePresence({
+      instance: false
+    })
   }
 })
-/*
+
 // MENU ITEMS and COMMANDS
 menu.append(new MenuItem({
   label: 'RobloxUtil',
@@ -80,11 +83,14 @@ menu.append(new MenuItem({
 
 // ADD THE MENU
 Menu.setApplicationMenu(menu)
-*/
+
 // CREATE WINDOW FUNCTION
 function createWindow () {
 
   // PROMPT FOR USERNAME
+  RPC.updatePresence({
+    instance: false
+  })
   prompt({
     title: 'Enter a Roblox Username',
     label: 'Username:',
@@ -98,7 +104,7 @@ function createWindow () {
     // VARIABLE FOR WINDOW
     const win = new BrowserWindow({
       width: 1500,
-      height: 971,
+      height: 1060,
       titleBarStyle: 'hiddenInset',
       webPreferences: {
         nodeIntegration: true

@@ -122,10 +122,16 @@
     li a i, li a{ color:white!important;}
     .subheader {color: #99AAB5!important;}
     #header, #content {color:black!important;}
+    input { color:white; }
+    .modal { background: #2C2F33;}
+    .modal h4 {color:white!important;}
+    .modal-footer { background: #23272A!important;}
+    
   }
   
   @media (prefers-color-scheme: light) {
     body { background:  #fff; color: black; }
+    input { color:black; }
   }
 
   .ssa{
@@ -135,4 +141,28 @@
 
   .card #avatar{
       padding-top:30px;
+  }
+
+  /* label focus color */
+  
+  /* valid color */
+  .input-field input[type=url].valid {
+    border-bottom: 1px solid green!important;
+    box-shadow: 0 1px 0 0  green!important;
+  }
+  /* invalid color */
+  .input-field input[type=url].invalid {
+    border-bottom: 1px solid red!important;
+    box-shadow: 0 1px 0 0  red!important;
+  }
+  /* icon prefix focus color */
+  
+
+  textarea{
+    border:none;
+    text-align:center;
+    -webkit-user-select: none;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
   }

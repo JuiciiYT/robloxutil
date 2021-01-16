@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Spectakular_YT | RobloxUtil</title>
+    <title>Not a valid user | RobloxUtil</title>
 
     <!-- CSS -->
     <link
@@ -49,9 +49,9 @@
             <div id="output"><img src="https://images.unsplash.com/photo-1488905373347-189b5464fd44?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=130"></div>
           </div>
           <a href="#user" id="headshot"></a>
-          <a href="#name"><span class="white-text name">John Doe</span></a>
+          <a href="#name"><span class="white-text name" id="username-nav"></span></a>
           <a href="#email"
-            ><span class="white-text email">jdandturk@gmail.com</span></a
+            ><span class="white-text email" id="status-nav"></span></a
           >
         </div>
       </li>
@@ -122,11 +122,9 @@
 
         <div class="col s8">
           <div class="card first">
-            <h5 class="padtop">Username History <i class="material-icons">history</i></h5>
-            <div class="card-content">
-              <p id="username-history">
-                
-              </p>
+            <h5 class="padtop">Claim this account <i class="material-icons">exit_to_app</i></h5>
+            <div class="card-content" id="claim">
+              <a href="claim.html" class="btn">CLAIM THIS ACCOUNT</a>
             </div>
           </div>
         </div>
@@ -238,6 +236,19 @@
    <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-orange orange-text btn-flat">CANCEL</a><a href="#!" onclick="finished()" class="modal-close waves-effect waves-orange orange-text btn-flat">DONE</a>
    </div>
+   <style>
+    input[type=url]:focus + label {
+    color: orange!important;
+  }
+  /* label underline focus color */
+  input[type=url]:focus {
+    border-bottom: 1px solid orange!important;
+    box-shadow: 0 1px 0 0 orange!important;
+  }
+  .prefix.active {
+    color:  orange!important;
+  }
+   </style>
  </div>
 
  <script>

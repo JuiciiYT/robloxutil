@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Not a valid user | RobloxUtil</title>
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      href="https://tr.rbxcdn.com/944b783f5e4d781fde088b87e14286ac/352/352/AvatarHeadshot/Png"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+    <div id="macos"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.7.1.js"></script>
+    <script src="https://kit.fontawesome.com/eb84d536b6.js" crossorigin="anonymous"></script>
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="./inject.js"></script>
+    <script src="./user.js"></script>
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <div class="">
+      <!-- NAVBAR -->
+      <nav class="orange">
+        <a href="#" data-target="slide-out" class="sidenav-trigger"
+          ><i class="material-icons white-text">menu</i></a
+        >
+      </nav>
+    </div>
+    <ul id="slide-out" class="sidenav">
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <div id="output"><img src="https://images.unsplash.com/photo-1488905373347-189b5464fd44?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=130"></div>
+          </div>
+          <a href="#user" id="headshot"></a>
+          <a href="#name"><span class="white-text name" id="username-nav"></span></a>
+          <a href="#email"
+            ><span class="white-text email" id="status-nav"></span></a
+          >
+        </div>
+      </li>
+      <li>
+        <a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a>
+      </li>
+      <li><a href="#!">Second Link</a></li>
+      <li><div class="divider"></div></li>
+      <li><a class="subheader">Other</a></li>
+      <li><a class="waves-effect modal-trigger" href="#modal1">Change Sidenav BG</a></li>
+    </ul>
+
+    <!-- CONTAINER & ROW-->
+    <div class="container center">
+      <!-- USERNAME -->
+      <h2 class="h4">
+        <strong>Coming Soon...</strong>
+      </h2>
+      <p><a href="./index.html">Go Back</a></p>
+     
+</div>
+ </div>
+
+ <script>
+      function includeHTML() {
+    var z, i, elmnt, file, xhttp;
+    /* Loop through a collection of all HTML elements: */
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+      elmnt = z[i];
+      /*search for elements with a certain atrribute:*/
+      file = elmnt.getAttribute("w3-include-html");
+      if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4) {
+            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+            /* Remove the attribute, and call this function once more: */
+            elmnt.removeAttribute("w3-include-html");
+            includeHTML();
+          }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+      }
+    }
+  }
+
+  
+
+  includeHTML()
+
+  function finished() {
+     const response = document.getElementById("email_inline")
+     document.getElementById("output").innerHTML = `<img src="${response.value}">`
+  }
+
+ </script>
