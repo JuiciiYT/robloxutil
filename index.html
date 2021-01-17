@@ -288,10 +288,13 @@
   function finished() {
     const fs = require("fs")
     fs.writeFile('./image.json', `{ "url": "${document.getElementById("email_inline").value}" }`, (err) => { if (err) throw err })
+    $.getJSON("./image.json", function(image) {
+      document.getElementById("output").innerHTML = `<img src="${image.url}">`
+    })
   }
 
   $.getJSON("./image.json", function(image) {
       document.getElementById("output").innerHTML = `<img src="${image.url}">`
-    })
+  })
 
  </script>
