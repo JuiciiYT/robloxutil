@@ -1,7 +1,6 @@
 const getUser = require("roblox-user-information")
 
 $.getJSON("./result.json", function(result) {
-  document.getElementById("result").innerHTML = result.input;
   (async() => {
     await getUser(result.input).then(user => {
       if(user.success == false) {

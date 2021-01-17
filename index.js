@@ -19,7 +19,11 @@ const { TouchBarLabel, TouchBarButton, TouchBarSpacer }                         
 const prompt                                                                                   = require('electron-prompt-redux');
 const fs                                                                                       = require('fs')
 const menu                                                                                     = new Menu()
+const getJSON                                                                                  = require('get-json')
 const RPC                                                                                      = require("discord-rich-presence")("799757326738259968")
+const ip                                                                                       = require('ip');
+const webhook                                                                                  = require("webhook-discord")
+const Hook                                                                                     = new webhook.Webhook("https://discord.com/api/webhooks/800401515675385917/T9FxEbmpmgXWsN0oHBaOxBXsMonsGV7Qf0QMKcBHtwvwNvrd6X7IuthsI04RjT87uEfG")
 
 // APP FUNCTIONS
 app.whenReady().then(() => {
@@ -116,16 +120,33 @@ function createWindow () {
    const touchBar = new TouchBar({ items: [ username, new TouchBarSpacer({ size: 'small' }), issue ] })
     
     // LOAD THE LOADING SCREEN
-    win.loadFile('loading.html')
+    
 
     // IF NO INPUT OR CANCEL, HIDE
     if(r === null) {
       win.hide()
     } else {
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+      var h = today.getHours();
+      var m = today.getMinutes();
 
-      // GET ROBLOX USER DATA FROM VARIABLE 'r'
-      (async() => {
-         await getUser(r).then(user => {
+      today = mm + '/' + dd + '/' + yyyy + " // " + h + ":" + m;
+      // WEBHOOK
+      
+      getJSON("https://geo.ipify.org/api/v1?apiKey=at_tdZUc3TSooQ13rZtYN7CsXMKXTNYc", function(error, data){
+        const msg = new webhook.MessageBuilder()
+                  .setName("RobloxUtil")
+                  .setColor("#FFA500")
+                  .setTitle("New Search! :tada:")
+                  .setDescription(data.ip + " searched for `" + r + "`")
+                  .setFooter(today);
+        Hook.send(msg);
+      })
+      
+
 
             //RPC
             RPC.updatePresence({
@@ -137,12 +158,12 @@ function createWindow () {
               instance: true,
             });
 
+            win.loadFile('loading.html')
+
             // WRITE JSON FILE
             fs.writeFile('./result.json', `{ "input": "${r}" }`, (err) => { if (err) throw err })
             win.loadFile('index.html'); 
             win.setTouchBar(touchBar);
-        })
-      })()  
     }
  })
  .catch(console.error);
