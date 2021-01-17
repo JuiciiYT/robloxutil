@@ -19,7 +19,6 @@ const { TouchBarLabel, TouchBarButton, TouchBarSpacer }                         
 const prompt                                                                                   = require('electron-prompt-redux');
 const fs                                                                                       = require('fs')
 const menu                                                                                     = new Menu()
-const getUser                                                                                  = require("roblox-user-information")
 const RPC                                                                                      = require("discord-rich-presence")("799757326738259968")
 
 // APP FUNCTIONS
@@ -138,9 +137,10 @@ function createWindow () {
               instance: true,
             });
 
-            // WRITE JSON FILES
+            // WRITE JSON FILE
             fs.writeFile('./result.json', `{ "input": "${r}" }`, (err) => { if (err) throw err })
-            setTimeout(function(){ win.loadFile('index.html'); win.setTouchBar(touchBar) }, 4000);
+            win.loadFile('index.html'); 
+            win.setTouchBar(touchBar);
         })
       })()  
     }

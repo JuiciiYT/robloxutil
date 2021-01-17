@@ -87,7 +87,7 @@
   }
   
   html{
-    overflow: scroll;
+    overflow: none;
   }
   
   .first{

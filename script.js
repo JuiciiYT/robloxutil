@@ -1,14 +1,13 @@
-var navbar = document.querySelector('nav')
-
-window.onscroll = function() {
-
-  // pageYOffset or scrollY
-  if (window.pageYOffset > 0) {
-    navbar.classList.add('scrolled')
-  } else {
-    navbar.classList.remove('scrolled')
-  }
+function finished() {
+  const fs = require("fs")
+  fs.writeFile('./image.json', `{ "url": "${document.getElementById("email_inline").value}" }`, (err) => { if (err) throw err })
+  setTimeout(function(){ $.getJSON("./image.json", function(image) { document.getElementById("output").innerHTML = `<img src="${image.url}">` })}, 500);
 }
+
+$.getJSON("./image.json", function(image) {
+    document.getElementById("output").innerHTML = `<img src="${image.url}">`
+})
+
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
@@ -21,3 +20,4 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
+  
