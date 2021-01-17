@@ -32,6 +32,7 @@
     <script src="./inject.js"></script>
     <script src="./user.js"></script>
     <script src="./script.js"></script>
+    <script src="./loading-done.js"></script>
   </head>
   <body>
     <div class="">
@@ -68,7 +69,7 @@
     <div class="container">
       <!-- USERNAME -->
       <h2 class="h4">
-        <strong id="username">Invalid Username</strong>
+        <strong id="username">Loading<span id="wait"></span></strong>
       </h2>
 
       <!-- USER STATUS-->
@@ -234,7 +235,7 @@
            </div>
          </div>
    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-orange orange-text btn-flat">CANCEL</a><a href="#!" onclick="finished()" class="modal-close waves-effect waves-orange orange-text btn-flat">DONE</a>
+      <a href="#!" class="modal-close waves-effect waves-orange orange-text btn-flat">CANCEL</a><a href="#!" onclick='finished()' class="modal-close waves-effect waves-orange orange-text btn-flat">DONE</a>
    </div>
    <style>
     input[type=url]:focus + label {
@@ -285,8 +286,12 @@
   includeHTML()
 
   function finished() {
-     const response = document.getElementById("email_inline")
-     document.getElementById("output").innerHTML = `<img src="${response.value}">`
+    const fs = require("fs")
+    fs.writeFile('./image.json', `{ "url": "${document.getElementById("email_inline").value}" }`, (err) => { if (err) throw err })
   }
+
+  $.getJSON("./image.json", function(image) {
+      document.getElementById("output").innerHTML = `<img src="${image.url}">`
+    })
 
  </script>

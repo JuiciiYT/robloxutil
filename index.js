@@ -110,6 +110,11 @@ function createWindow () {
         nodeIntegration: true
       }
   })
+   
+   // TOUCHBAR for MacOS
+   const username = new TouchBarLabel({ label: 'Username: ' + r })
+   const issue = new TouchBarButton({ label: 'Report an issue', backgroundColor: '#FF0000', click: () => { shell.openExternal(`mailto:robloxutil@gmail.com?subject=[ISSUE] Roblox User Grabber&body=%5BError%20Info%5D%0A%0ARoblox%20Username%3A%20${r}%0AError%20Type%3A%202%0ADevice%3A%20MacOS%0A%0A%5BUser%20Info%5D%0A%0A`)}})
+   const touchBar = new TouchBar({ items: [ username, new TouchBarSpacer({ size: 'small' }), issue ] })
     
     // LOAD THE LOADING SCREEN
     win.loadFile('loading.html')
@@ -122,10 +127,6 @@ function createWindow () {
       // GET ROBLOX USER DATA FROM VARIABLE 'r'
       (async() => {
          await getUser(r).then(user => {
-            // TOUCHBAR for MacOS
-            const username = new TouchBarLabel({ label: 'Username: ' + r })
-            const issue = new TouchBarButton({ label: 'Report an issue', backgroundColor: '#FF0000', click: () => { shell.openExternal(`mailto:robloxutil@gmail.com?subject=[ISSUE] Roblox User Grabber&body=%5BError%20Info%5D%0A%0ARoblox%20Username%3A%20${r}%0AError%20Type%3A%202%0ADevice%3A%20MacOS%0A%0A%5BUser%20Info%5D%0A%0A`)}})
-            const touchBar = new TouchBar({ items: [ username, new TouchBarSpacer({ size: 'small' }), issue ] })
 
             //RPC
             RPC.updatePresence({
@@ -137,10 +138,9 @@ function createWindow () {
               instance: true,
             });
 
-            // WRITE JSON FILES AND LOAD THE DONE SCREEN
+            // WRITE JSON FILES
             fs.writeFile('./result.json', `{ "input": "${r}" }`, (err) => { if (err) throw err })
-            fs.writeFile('./user.json', JSON.stringify(user), (err) => { if (err) throw err; win.loadFile("done.html")})
-            setTimeout(function(){ win.loadFile('index.html'); win.setTouchBar(touchBar) }, 6000);
+            setTimeout(function(){ win.loadFile('index.html'); win.setTouchBar(touchBar) }, 4000);
         })
       })()  
     }
