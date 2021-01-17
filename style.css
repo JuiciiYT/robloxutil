@@ -87,7 +87,7 @@
   }
   
   html{
-    overflow: scroll;
+    overflow: none;
   }
   
   .first{
@@ -165,4 +165,8 @@
     user-select: none;
     -ms-user-select: none;
     -moz-user-select: none;
+  }
+
+  hidden, .sidenav-trigger, .subheader{
+    user-select: none;
   }

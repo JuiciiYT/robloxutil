@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Commands | RobloxUtil</title>
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      href="https://tr.rbxcdn.com/944b783f5e4d781fde088b87e14286ac/352/352/AvatarHeadshot/Png"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+    <div id="macos"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.7.1.js"></script>
+    <script src="https://kit.fontawesome.com/eb84d536b6.js" crossorigin="anonymous"></script>
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="./inject.js"></script>
+    <script src="./script.js"></script>
+    <script src="./loading-done.js"></script>
+  </head>
+  <body>
+    <div class="">
+      <!-- NAVBAR -->
+      <nav class="orange">
+        <a href="./index.html" class="sidenav-trigger"
+          ><i class="material-icons white-text">chevron_left</i></a
+        >
+      </nav>
+    </div>
+    <ul id="slide-out" class="sidenav">
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <div id="output"><img src="https://images.unsplash.com/photo-1488905373347-189b5464fd44?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=130"></div>
+          </div>
+          <a href="#user" id="headshot"></a>
+          <a href="#name"><span class="white-text name" id="username-nav"></span></a>
+          <a href="#email"
+            ><span class="white-text email" id="status-nav"></span></a
+          >
+        </div>
+      </li>
+      <li>
+        <a href="#!" class="waves-effect"><i class="material-icons">keyboard</i>Commands</a>
+      </li>
+      <li><a href="#!">Second Link</a></li>
+      <li><div class="divider"></div></li>
+      <li><a class="subheader">Other</a></li>
+      <li><a class="waves-effect modal-trigger" href="#modal1">Change Sidenav BG</a></li>
+    </ul>
+
+    <!-- CONTAINER & ROW-->
+    <div class="container">
+      <!-- USERNAME -->
+      <h2 class="h4">
+        <strong>Commands</strong>
+      </h2>
+
+      <!-- MISC -->
+      <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <div class="card-content">
+                <h4>Miscellaneous</h4>
+                <p>
+                    <table>
+                        <thead>
+                          <tr>
+                              <th>Command</th>
+                              <th>Action</th>
+                          </tr>
+                        </thead>
+                
+                        <tbody>
+                          <tr>
+                            <td><device></device>+Y</td>
+                            <td>Search for a user</td>
+                          </tr>
+                          <tr>
+                            <td><device></device>+R&nbsp;<hidden class="transparent-text">+Shiftdhjhfjddds</hidden></td>
+                            <td>Reload Page</td>
+                          </tr>
+                          <tr>
+                            <td><device></device>+H</td>
+                            <td>Help/Issues</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- EDIT -->
+        <div class="row">
+            <div class="col s12">
+              <div class="card">
+                <div class="card-content">
+                    <h4>Edit</h4>
+                    <p>
+                        <table>
+                            <thead>
+                              <tr>
+                                  <th>Command</th>
+                                  <th>Action</th>
+                              </tr>
+                            </thead>
+                    
+                            <tbody>
+                              <tr>
+                                <td><device></device>+Z</td>
+                                <td>Undo</td>
+                              </tr>
+                              <tr>
+                                <td><device></device>+Shift+Z</td>
+                                <td>Redo</td>
+                              </tr>
+                              <tr>
+                                <td><device></device>+X</td>
+                                <td>Cut</td>
+                              </tr>
+                              <tr>
+                                <td><device></device>+C</td>
+                                <td>Copy</td>
+                              </tr>
+                              <tr>
+                                <td><device></device>+V</td>
+                                <td>Paste</td>
+                              </tr>
+                              <tr>
+                                <td><device></device>+A</td>
+                                <td>Select All</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+   </html>
+ <script>
+     //Detect if Mac
+if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+    $("device").append("Cmd")
+} else {
+    $("device").append("Ctrl")
+}
+
+ </script>

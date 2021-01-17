@@ -1,14 +1,19 @@
-var navbar = document.querySelector('nav')
+const { fstat } = require("fs");
 
-window.onscroll = function() {
+const fs = require("fs")
 
-  // pageYOffset or scrollY
-  if (window.pageYOffset > 0) {
-    navbar.classList.add('scrolled')
-  } else {
-    navbar.classList.remove('scrolled')
-  }
+function finished() {
+  fs.writeFile("./image.json", `{ "url": "${document.getElementById("email_inline").value}" }`)
+  setTimeout(function(){ 
+    $.getJSON("./image.json", function(image) {
+      document.getElementById("output").innerHTML = `<img src="${image.url}">`
+    })
+  }, 500)
 }
+
+$.getJSON("./image.json", function(image) {
+  document.getElementById("output").innerHTML = `<img src="${image.url}">`
+})
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');

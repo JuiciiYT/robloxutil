@@ -1,8 +1,12 @@
 const getUser = require("roblox-user-information")
 
 $.getJSON("./result.json", function(result) {
+  document.getElementById("result").innerHTML = result.input;
   (async() => {
     await getUser(result.input).then(user => {
+      if(user.success == false) {
+        window.location.replace("./invalid.html")
+      }
       document.title = user.username + " | RobloxUtil"
       document.getElementById("username").innerHTML = user.username;
       document.getElementById("username-nav").innerHTML = user.username;
@@ -21,9 +25,7 @@ $.getJSON("./result.json", function(result) {
 
        document.getElementById('headshot').innerHTML = `<img class="circle" src="https://www.roblox.com/headshot-thumbnail/image?userId=${user.id}&width=352&height=352&format=png">`;
        document.getElementById("avatar").innerHTML = `<img src="https://www.roblox.com/avatar-thumbnail/image?userId=${user.id}&width=352&height=352&format=png">`
-       
-      
-
+  
    })
   })() 
 })
