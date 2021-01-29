@@ -112,8 +112,8 @@ See the [open issues](https://github.com/RobloxUtil/robloxutil/issues) for a lis
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
+Distributed under the MIT License. See `LICENSE.txt` for more information.<br>
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRobloxUtil%2Frobloxutil.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FRobloxUtil%2Frobloxutil?ref=badge_large)
 
 
 <!-- CONTACT -->
