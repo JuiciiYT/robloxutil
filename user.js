@@ -24,7 +24,12 @@ $.getJSON("./result.json", function(result) {
 
        document.getElementById('headshot').innerHTML = `<img class="circle" src="https://www.roblox.com/headshot-thumbnail/image?userId=${user.id}&width=352&height=352&format=png">`;
        document.getElementById("avatar").innerHTML = `<img src="https://www.roblox.com/avatar-thumbnail/image?userId=${user.id}&width=352&height=352&format=png">`
-  
+
+       if (user.friends.count == 0) {
+        document.getElementById("friends-list").innerHTML = "This person's a bit lonely. They have no friends. :("
+       } else {
+        document.getElementById("friends-list").innerHTML = `<div class="card-panel grey lighten-5 z-depth-1"><div class="row valign-wrapper black-text">${user.friends.friends.join(' • ')}</div>`
+       }
    })
   })() 
 })

@@ -98,21 +98,21 @@
     height:300px!important;
   }
   
-  .bottom .divider-vert{
+   /*.bottom .divider-vert{
       position:absolute;
       left:30%;
       top:10%;
       bottom:10%;
       border-left:1px solid #e0e0e0;
-  }
+  }*/
   
-  .divider-vert{
+  /* .divider-vert{
     position:absolute;
       left:50%;
       top:10%;
       bottom:10%;
       border-left:1px solid #e0e0e0;
-  }
+  }*/
   
 /* Dark Mode */
   @media (prefers-color-scheme: dark) {
@@ -169,4 +169,12 @@
 
   hidden, .sidenav-trigger, .subheader{
     user-select: none;
+  }
+
+  * {
+    overflow:scroll;
+  }
+
+  * .ssa{
+    overflow:none!important;
   }
