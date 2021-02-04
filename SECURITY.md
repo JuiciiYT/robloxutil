@@ -7,4 +7,4 @@ We are not responsible for any versions of this app that are not made by us. You
 If you downloaded our app but installed a custom theme, that's not on our repo you have a chance of losing personal info. If you notice a theme that modifies our already put JS code, report it to us (especially if it's a verified theme). If the user doesn't update their theme when you reported, tell us and we will remove it.
 
 > Stay Safe,<br>
-RobloxUtil Team
+RBXUtil Team
