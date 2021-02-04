@@ -92,7 +92,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/RBXUtil/robloxutil.git && cd robloxutil
+   git clone https://github.com/RBXUtil/RBXUtil.git && cd robloxutil
    ```
 2. Install NPM packages
    ```sh
