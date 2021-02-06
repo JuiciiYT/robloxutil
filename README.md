@@ -16,18 +16,18 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/RobloxUtil/robloxutil">
+  <a href="https://github.com/RBXUtil/robloxutil">
     <img src="https://svgshare.com/i/SqS.svg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">RobloxUtil</h3>
+  <h3 align="center">RBXUtil</h3>
 
   <p align="center">
     An electron app which can be used for various Roblox Utilities.
     <br />
-    <a href="https://github.com/RobloxUtil/robloxutil/issues">Report Bug</a>
+    <a href="https://github.com/RBXUtil/robloxutil/issues">Report Bug</a>
     ·
-    <a href="https://github.com/RobloxUtil/robloxutil/issues">Request Feature</a>
+    <a href="https://github.com/RBXUtil/robloxutil/issues">Request Feature</a>
   </p>
 </p>
 
@@ -65,7 +65,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-**<a href="https://streamable.com/461d95">RobloxUtil Preview</a>**
+**<a href="https://streamable.com/461d95">RBXUtil Preview</a>**
   
 This is a Roblox Utility App which can be used for various uses.
 
@@ -92,7 +92,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/RobloxUtil/robloxutil.git && cd robloxutil
+   git clone https://github.com/RBXUtil/RBXUtil.git && cd robloxutil
    ```
 2. Install NPM packages
    ```sh
@@ -107,13 +107,13 @@ To get a local copy up and running follow these simple steps.
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/RobloxUtil/robloxutil/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/RBXUtil/robloxutil/issues) for a list of proposed features (and known issues).
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.<br>
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRobloxUtil%2Frobloxutil.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FRobloxUtil%2Frobloxutil?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRBXUtil%2Frobloxutil.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FRBXUtil%2Frobloxutil?ref=badge_large)
 
 
 <!-- CONTACT -->
@@ -121,7 +121,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.<br>
 
 Twitter - [@juicii_official](https://twitter.com/juicii_official)
 
-Project Link: [https://github.com/RobloxUtil/robloxutil](https://github.com/RobloxUtil/robloxutil)
+Project Link: [https://github.com/RBXUtil/robloxutil](https://github.com/RBXUtil/robloxutil)
 
 ## Acknowledgements
 * [Img Shields](https://shields.io)
@@ -131,17 +131,17 @@ Project Link: [https://github.com/RobloxUtil/robloxutil](https://github.com/Robl
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/RobloxUtil/robloxutil.svg?style=for-the-badge
-[contributors-url]: https://github.com/RobloxUtil/robloxutil/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/RobloxUtil/robloxutil.svg?style=for-the-badge
-[forks-url]: https://github.com/RobloxUtil/robloxutil/network/members
-[stars-shield]: https://img.shields.io/github/stars/RobloxUtil/robloxutil.svg?style=for-the-badge
-[stars-url]: https://github.com/RobloxUtil/robloxutil/stargazers
-[issues-shield]: https://img.shields.io/github/issues/RobloxUtil/robloxutil.svg?style=for-the-badge
-[issues-url]: https://github.com/RobloxUtil/robloxutil/issues
-[license-shield]: https://img.shields.io/github/license/RobloxUtil/robloxutil.svg?style=for-the-badge
-[license-url]: https://github.com/RobloxUtil/robloxutil/blob/master/LICENSE.txt
-[version-shield]: https://img.shields.io/github/package-json/v/RobloxUtil/robloxutil.svg?style=for-the-badge
-[version-url]: https://github.com/RobloxUtil/robloxutil/blob/master/package.json
-[last-commit]: https://img.shields.io/github/last-commit/RobloxUtil/robloxutil.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/RBXUtil/robloxutil.svg?style=for-the-badge
+[contributors-url]: https://github.com/RBXUtil/robloxutil/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/RBXUtil/robloxutil.svg?style=for-the-badge
+[forks-url]: https://github.com/RBXUtil/robloxutil/network/members
+[stars-shield]: https://img.shields.io/github/stars/RBXUtil/robloxutil.svg?style=for-the-badge
+[stars-url]: https://github.com/RBXUtil/robloxutil/stargazers
+[issues-shield]: https://img.shields.io/github/issues/RBXUtil/robloxutil.svg?style=for-the-badge
+[issues-url]: https://github.com/RBXUtil/robloxutil/issues
+[license-shield]: https://img.shields.io/github/license/RBXUtil/robloxutil.svg?style=for-the-badge
+[license-url]: https://github.com/RBXUtil/robloxutil/blob/master/LICENSE.txt
+[version-shield]: https://img.shields.io/github/package-json/v/RBXUtil/robloxutil.svg?style=for-the-badge
+[version-url]: https://github.com/RBXUtil/robloxutil/blob/master/package.json
+[last-commit]: https://img.shields.io/github/last-commit/RBXUtil/robloxutil.svg?style=for-the-badge
 [product-preview]: https://s8.gifyu.com/images/Screen-Recording-2021-01-04-at-1.gif
