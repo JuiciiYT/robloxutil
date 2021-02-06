@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link href="./css/menus.css" rel="stylesheet">
+     <span id="macos"></span>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <nav class="transparent"><a href="./menu.html"><i class="material-icons sidenav-trigger padtop">chevron_left</i></a></nav>
+    <script src="./js/inject.js"></script>
+  </head>
+  <body class="">
+      <span class="bob">
+      <span class="center">
+    <h3 class="">
+      Enter Username
+    </h3>
+</span>
+<div class="row center">
+    <nav class="orange" style="width:900px;">
+        <div class="nav-wrapper">
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+        </div>
+      </nav>
+</div>
+</span>
+  </body>
+</html>
+<script>
+const fs = require("fs")
+const $ = require('jquery')
+
+
+var input = document.getElementById("search");
+
+// Execute a function when the user releases a key on the keyboard
+
+$('#search').keypress(function(event) {
+        if (event.keyCode == 13) {
+            fs.writeFileSync('./result.json', `{ "input":"${document.getElementById("search").value}" }`)
+            window.location.replace("./user.html")
+        }
+    });
+</script>

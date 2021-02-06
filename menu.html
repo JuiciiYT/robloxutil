@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./css/menu.css" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  </head>
+  <body class="container center">
+    <span class="bob">
+    <h3 class="">
+      Select an option
+    </h3>
+    <div class="row center">
+      <div class="col s4">
+        <a href="./search.user.html" class="card center waves-effect waves-orange">
+          <div class="material-icons sike">account_circle</div><br><br>
+          Search a user
+        </a>
+      </div>
+      <div class="col s4">
+        <a href="./beta.html" class="card center waves-effect waves-orange">
+          <div class="material-icons sike">sports_esports</div><br><br>
+          Search a game
+        </a>
+      </div>
+      <div class="col s4">
+        <a href="./beta.html" class="card center waves-effect waves-orange">
+          <div class="material-icons sike">store</div><br><br>
+          Search the catalog
+        </a>
+      </div>
+      <div class="white-text bottom center sub">
+        <date></date> &copy; RBXUtil. All rights reserved.
+  </div>
+    </div>
+  </span>
+  </body>
+</html>
+<script>
+  const n = new Date()
+  const d = n.getFullYear()
+document.querySelector("date").innerHTML = d;
+</script>

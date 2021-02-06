@@ -48,7 +48,7 @@ app.on('activate', () => {
 })
 
 // MENU ITEMS and COMMANDS
-menu.append(new MenuItem({
+/* menu.append(new MenuItem({
   label: 'RobloxUtil',
     submenu: [
       { 
@@ -85,7 +85,7 @@ menu.append(new MenuItem({
 }))
 
 // ADD THE MENU
-Menu.setApplicationMenu(menu)
+Menu.setApplicationMenu(menu)*/
 
 // CREATE WINDOW FUNCTION
 function createWindow () {
@@ -94,16 +94,6 @@ function createWindow () {
   RPC.updatePresence({
     instance: false
   })
-  prompt({
-    title: 'Enter a Roblox Username',
-    label: 'Username:',
-    value: '',
-    inputAttrs: {
-        type: 'text'
-    },
-    type: 'input'
-  })
-  .then((r) => {
     // VARIABLE FOR WINDOW
     const win = new BrowserWindow({
       width: 1500,
@@ -113,60 +103,8 @@ function createWindow () {
         nodeIntegration: true
       }
   })
-   
-   // TOUCHBAR for MacOS
-   const username = new TouchBarLabel({ label: 'Username: ' + r })
-   const issue = new TouchBarButton({ label: 'Report an issue', backgroundColor: '#FF0000', click: () => { shell.openExternal(`mailto:robloxutil@gmail.com?subject=[ISSUE] Roblox User Grabber&body=%5BError%20Info%5D%0A%0ARoblox%20Username%3A%20${r}%0AError%20Type%3A%202%0ADevice%3A%20MacOS%0A%0A%5BUser%20Info%5D%0A%0A`)}})
-   const touchBar = new TouchBar({ items: [ username, new TouchBarSpacer({ size: 'small' }), issue ] })
-    
-    // LOAD THE LOADING SCREEN
-    
 
-    // IF NO INPUT OR CANCEL, HIDE
-    if(r === null) {
-      win.hide()
-    } else {
-      var today = new Date();
-      var dd = String(today.getDate()).padStart(2, '0');
-      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-      var yyyy = today.getFullYear();
-      var h = today.getHours();
-      var m = today.getMinutes();
-
-      today = mm + '/' + dd + '/' + yyyy + " // " + h + ":" + m;
-      // WEBHOOK
-      
-      //You can remove this if you like...
-      getJSON("https://geo.ipify.org/api/v1?apiKey=at_tdZUc3TSooQ13rZtYN7CsXMKXTNYc", function(error, data){
-        const msg = new webhook.MessageBuilder()
-                  .setName("RobloxUtil")
-                  .setColor("#FFA500")
-                  .setTitle("New Search! :tada:")
-                  .setDescription(data.ip + " searched for `" + r + "`")
-                  .setFooter(today);
-        Hook.send(msg);
-      })
-      
-
-
-            //RPC
-            RPC.updatePresence({
-              state: 'Looking at a user',
-              details: r,
-              startTimestamp: Date.now(),
-              largeImageKey: 'icon',
-              smallImageKey: 'electron',
-              instance: true,
-            });
-
-            win.loadFile('loading.html')
-
-            // WRITE JSON FILE
-            fs.writeFile('./result.json', `{ "input": "${r}" }`, (err) => { if (err) throw err })
-            win.loadFile('index.html'); 
-            win.setTouchBar(touchBar);
+            win.loadFile('./menu.html'); 
     }
- })
- .catch(console.error);
-}
+
 
