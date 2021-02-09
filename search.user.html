@@ -58,4 +58,14 @@ $('#search').keypress(function(event) {
 
         }
     });
+
+const RPC = require("discord-rich-presence")("799757326738259968")
+RPC.updatePresence({
+  state: 'Searching for a user',
+  details: 'Main Menu',
+  startTimestamp: Date.now(),
+  largeImageKey: 'icon',
+  smallImageKey: 'electron',
+  instance: true,
+});
 </script>

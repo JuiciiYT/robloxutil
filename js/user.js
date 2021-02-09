@@ -3,6 +3,15 @@ const getUser = require("roblox-user-information")
 $.getJSON("./json/result.json", function(result) {
   (async() => {
     await getUser(result.input).then(user => {
+      const RPC = require("discord-rich-presence")("799757326738259968")
+RPC.updatePresence({
+  state: user.username,
+  details: 'User',
+  startTimestamp: Date.now(),
+  largeImageKey: 'icon',
+  smallImageKey: 'electron',
+  instance: true,
+});
       if(user.success == false) {
         window.location.replace("./invalid.html")
       }

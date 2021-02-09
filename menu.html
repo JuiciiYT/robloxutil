@@ -66,6 +66,14 @@ $.get("./log/user.log", function(txt){
   document.querySelector('#why').innerHTML = `<a class="red btn waves-effect waves-light" onclick="fs.writeFileSync('./log/user.log', '');window.location.replace(window.location)">Clear History</a>`
   }
 })
+const RPC = require("discord-rich-presence")("799757326738259968")
+RPC.updatePresence({
+  details: 'Main Menu',
+  startTimestamp: Date.now(),
+  largeImageKey: 'icon',
+  smallImageKey: 'electron',
+  instance: true,
+});
 
 
 </script>
