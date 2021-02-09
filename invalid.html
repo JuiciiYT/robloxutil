@@ -91,7 +91,7 @@ if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
     $("device").append("Ctrl")
 }
 
-$.getJSON("./result.json", function(result) {
+$.getJSON("./json/result.json", function(result) {
   document.getElementById("result").innerHTML = result.input;
 })
 
@@ -99,7 +99,7 @@ const { shell } = require("electron")
 
 
 function mail() {
-    $.getJSON("./result.json", function(result) {
+    $.getJSON("./json/result.json", function(result) {
       shell.openExternal(`mailto:robloxutil@gmail.com?subject=[ISSUE] Roblox User Grabber&body=%5BError%20Info%5D%0A%0ARoblox%20Username%3A%20${result.input}%0AError%20Type%3A%201%0ADevice%3A%20${navigator.platform}%0A%0A%5BUser%20Info%5D%0A%0A`)
     })
 }

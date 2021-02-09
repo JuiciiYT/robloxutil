@@ -32,6 +32,7 @@
     "get-json": "^1.0.1",
     "jquery": "^3.5.1",
     "npm": "^6.14.11",
+    "prepend-file": "^2.0.0",
     "roblox-user-information": "^1.0.0",
     "webhook-discord": "^3.7.7"
   },

@@ -3,7 +3,7 @@ const { fstat } = require("fs");
 const fs = require("fs")
 
 function finished() {
-  fs.writeFile("./image.json", `{ "url": "${document.getElementById("email_inline").value}" }`)
+  fs.writeFile("./json/image.json", `{ "url": "${document.getElementById("email_inline").value}" }`)
   setTimeout(function(){ 
     $.getJSON("./image.json", function(image) {
       document.getElementById("output").innerHTML = `<img src="${image.url}">`
@@ -11,7 +11,7 @@ function finished() {
   }, 500)
 }
 
-$.getJSON("./image.json", function(image) {
+$.getJSON("./json/image.json", function(image) {
   document.getElementById("output").innerHTML = `<img src="${image.url}">`
 })
 

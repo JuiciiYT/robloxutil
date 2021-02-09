@@ -39,6 +39,8 @@
 <script>
 const fs = require("fs")
 const $ = require('jquery')
+var currentdate = new Date();
+var datetime = currentdate.getDay() + "/" + currentdate.getMonth() + "/" + currentdate.getFullYear() + " @ " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
 
 
 var input = document.getElementById("search");
@@ -47,8 +49,13 @@ var input = document.getElementById("search");
 
 $('#search').keypress(function(event) {
         if (event.keyCode == 13) {
-            fs.writeFileSync('./result.json', `{ "input":"${document.getElementById("search").value}" }`)
+            fs.writeFileSync('./json/result.json', `{ "input":"${document.getElementById("search").value}" }`)
             window.location.replace("./user.html")
+            const prependFile = require('prepend-file');
+            prependFile('./log/user.log', document.getElementById("search").value + " - " + datetime + "\n", () => {
+            
+            })
+
         }
     });
 </script>

@@ -27,6 +27,10 @@
     padding-top:30px!important;
     color:white;
   }
+
+.bsu{
+    padding-left: 60px!Important;
+  }
   
   /* Dark Mode */
     @media (prefers-color-scheme: dark) {

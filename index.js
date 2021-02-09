@@ -16,12 +16,10 @@ _________________________________________
 
 const { app, BrowserWindow, TouchBar, shell, Menu, MenuItem, globalShortcut }                  = require('electron');
 const { TouchBarLabel, TouchBarButton, TouchBarSpacer }                                        = TouchBar
-const prompt                                                                                   = require('electron-prompt-redux');
 const fs                                                                                       = require('fs')
 const menu                                                                                     = new Menu()
 const getJSON                                                                                  = require('get-json')
 const RPC                                                                                      = require("discord-rich-presence")("799757326738259968")
-const ip                                                                                       = require('ip');
 const webhook                                                                                  = require("webhook-discord")
 const Hook                                                                                     = new webhook.Webhook("https://discord.com/api/webhooks/800401515675385917/T9FxEbmpmgXWsN0oHBaOxBXsMonsGV7Qf0QMKcBHtwvwNvrd6X7IuthsI04RjT87uEfG")
 
