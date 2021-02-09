@@ -90,18 +90,9 @@ To get a local copy up and running follow these simple steps.
 
 #### Method 1
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/RBXUtil/RBXUtil.git && cd robloxutil
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-3. Start the app
-   ```sh
-   npm start
-   ```
+```bash
+curl -sS https://raw.githubusercontent.com/RBXUtil/RBXUtil/install/installer.sh | bash
+```
 
 
 <!-- ROADMAP -->
@@ -112,8 +103,7 @@ See the [open issues](https://github.com/RBXUtil/robloxutil/issues) for a list o
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.<br>
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRBXUtil%2Frobloxutil.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FRBXUtil%2Frobloxutil?ref=badge_large)
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 <!-- CONTACT -->
