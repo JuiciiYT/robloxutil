@@ -103,8 +103,7 @@ See the [open issues](https://github.com/RBXUtil/robloxutil/issues) for a list o
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.<br>
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRBXUtil%2Frobloxutil.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FRBXUtil%2Frobloxutil?ref=badge_large)
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 <!-- CONTACT -->
