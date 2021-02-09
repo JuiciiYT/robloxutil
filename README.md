@@ -90,18 +90,9 @@ To get a local copy up and running follow these simple steps.
 
 #### Method 1
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/RBXUtil/RBXUtil.git && cd robloxutil
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-3. Start the app
-   ```sh
-   npm start
-   ```
+```bash
+curl -sS https://raw.githubusercontent.com/RBXUtil/RBXUtil/install/installer.sh | bash
+```
 
 
 <!-- ROADMAP -->
