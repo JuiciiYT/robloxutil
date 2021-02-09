@@ -98,6 +98,11 @@ html{
   height:300px!important;
 }
 
+.determinate.orange, .progress{
+  padding:0!important;
+  margin:0!important;
+}
+
  /*.bottom .divider-vert{
     position:absolute;
     left:30%;
