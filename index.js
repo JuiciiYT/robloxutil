@@ -46,7 +46,7 @@ app.on('activate', () => {
 })
 
 // MENU ITEMS and COMMANDS
-/* menu.append(new MenuItem({
+menu.append(new MenuItem({
   label: 'RobloxUtil',
     submenu: [
       { 
@@ -83,7 +83,7 @@ menu.append(new MenuItem({
 }))
 
 // ADD THE MENU
-Menu.setApplicationMenu(menu)*/
+Menu.setApplicationMenu(menu)
 
 // CREATE WINDOW FUNCTION
 function createWindow () {
