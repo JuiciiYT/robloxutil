@@ -24,8 +24,7 @@ If applicable, add screenshots to help explain your problem.
 Please add the username you entered.
 
 **Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
+ - OS: [e.g. MacOS]
  - Version [e.g. 22]
 
 **Additional context**
