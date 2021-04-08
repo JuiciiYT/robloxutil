@@ -65,17 +65,39 @@
     </ul>
 
     <!-- CONTAINER & ROW-->
-    <div class="container center">
+    <div class="container">
       <!-- USERNAME -->
-      <h2 class="h4">
-        <strong>Coming Soon...</strong>
-      </h2>
-      <p><a href="./index.html">Go Back</a></p>
-     
+      <h3 class="h4 center">
+        <strong>Link Roblox Account</strong>
+      </h3>
+      <h4>
+        Change your Roblox description to:
+        <textarea readonly id="description" style="color:white;text-align: left;font-size: 20px;padding-top:15px;"></textarea>
+      </h4>
+      <a class="btn orange waves-effect waves-light" onclick="checker()">VERIFY</a>
+      <p id="tcheck"></p>
 </div>
  </div>
 
  <script>
+   const $ = require("jquery")
+
+   
+   const array = [
+     "catch",
+     "phrase",
+     "homepage",
+     "verify",
+     "drink",
+     "user",
+     "bored"
+   ]
+   const randomElement = array[Math.floor(Math.random() * array.length)];
+   const randomElement2 = array[Math.floor(Math.random() * array.length)];
+   const randomElement3 = array[Math.floor(Math.random() * array.length)];
+   const randomElement4 = array[Math.floor(Math.random() * array.length)];
+   document.getElementById("description").innerText = `${randomElement}, ${randomElement2}, ${randomElement3}, ${randomElement4}`
+
       function includeHTML() {
     var z, i, elmnt, file, xhttp;
     /* Loop through a collection of all HTML elements: */
@@ -112,5 +134,39 @@
      const response = document.getElementById("email_inline")
      document.getElementById("output").innerHTML = `<img src="${response.value}">`
   }
+
+  const { shell } = require('electron')
+function checker() {
+  const axios = require('axios');
+  const cheerio = require('cheerio');
+
+    const url = 'https://web.roblox.com/users/'+ getParameterByName('id') +'/profile';
+
+    axios(url)
+      .then(response => {
+        const html = response.data;
+        const scrape = cheerio.load(html);
+        const statsTable = scrape('.profile-about-content-text').text();
+        if (document.getElementById("description").value === statsTable) {
+          fs.writeFile("./json/link.json", `{ "id": "${getParameterByName('id')}", "username": "${getParameterByName('username')}"}`, function(err){
+
+          })
+          document.getElementById('tcheck').innerText = "Account Linked Successfully!"
+          setTimeout(function(){ window.location.replace("./user.html") }, 3000)
+        } else {
+          document.getElementById('tcheck').innerText = "There was an issue."
+        }
+      })
+      .catch(console.error);
+    }
+
+  function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
 
  </script>

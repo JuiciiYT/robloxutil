@@ -2,11 +2,11 @@
 
    ___       __   __         __  ____  _ __
   / _ \___  / /  / /__ __ __/ / / / /_(_) /
- / , _/ _ \/ _ \/ / _ \\ \ / /_/ / __/ / / 
-/_/|_|\___/_.__/_/\___/_\_\\____/\__/_/_/  
+ / , _/ _ \/ _ \/ / _ \\ \ / /_/ / __/ / /
+/_/|_|\___/_.__/_/\___/_\_\\____/\__/_/_/
 _________________________________________
 
-     Developed by JuiciiOfficial 
+     Developed by JuiciiOfficial
 
 */
 
@@ -18,10 +18,8 @@ const { app, BrowserWindow, TouchBar, shell, Menu, MenuItem, globalShortcut }   
 const { TouchBarLabel, TouchBarButton, TouchBarSpacer }                                        = TouchBar
 const fs                                                                                       = require('fs')
 const menu                                                                                     = new Menu()
-const getJSON                                                                                  = require('get-json')
 const RPC                                                                                      = require("discord-rich-presence")("799757326738259968")
-const webhook                                                                                  = require("webhook-discord")
-const Hook                                                                                     = new webhook.Webhook("https://discord.com/api/webhooks/800401515675385917/T9FxEbmpmgXWsN0oHBaOxBXsMonsGV7Qf0QMKcBHtwvwNvrd6X7IuthsI04RjT87uEfG")
+
 
 // APP FUNCTIONS
 app.whenReady().then(() => {
@@ -49,12 +47,12 @@ app.on('activate', () => {
 menu.append(new MenuItem({
   label: 'RobloxUtil',
     submenu: [
-      { 
-        role: 'help', 
-        accelerator: process.platform === 'darwin' ? 'Cmd+H' : 'Ctrl+H', 
+      {
+        role: 'help',
+        accelerator: process.platform === 'darwin' ? 'Cmd+H' : 'Ctrl+H',
         click: () => { shell.openExternal("https://github.com/RobloxUtil/robloxutil/issues") }
-      },  
-    ]  
+      },
+    ]
 }))
 
 menu.append(new MenuItem({
@@ -72,18 +70,20 @@ menu.append(new MenuItem({
     ]
 }))
 
-menu.append(new MenuItem({ 
-  label: 'Misc', 
+menu.append(new MenuItem({
+  label: 'Misc',
     submenu: [
-      { 
-        role: 'reload', 
-        accelerator: process.platform === 'darwin' ? 'Cmd+R' : 'Ctrl+R' 
+      {
+        role: 'reload',
+        accelerator: process.platform === 'darwin' ? 'Cmd+R' : 'Ctrl+R'
       }
-    ] 
+    ]
 }))
 
+app.setAsDefaultProtocolClient('rbxutil');
+
 // ADD THE MENU
-Menu.setApplicationMenu(menu)
+//Menu.setApplicationMenu(menu)
 
 // CREATE WINDOW FUNCTION
 function createWindow () {
@@ -101,8 +101,27 @@ function createWindow () {
         nodeIntegration: true
       }
   })
-
-            win.loadFile('./menu.html'); 
+  win.webContents.userAgent = "Mozilla/5.0 (Linux; Android 7.0; SM-G892A Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/68.0.3440.1805 Mobile Safari/537.36"
+            win.loadFile('./menu.html');
     }
 
+    function createWindow2 (name) {
 
+      // PROMPT FOR USERNAME
+      RPC.updatePresence({
+        instance: false
+      })
+        // VARIABLE FOR WINDOW
+        const win = new BrowserWindow({
+          width: 1500,
+          height: 1060,
+          titleBarStyle: 'hiddenInset',
+          webPreferences: {
+            nodeIntegration: true
+          }
+      })
+      win.webContents.userAgent = "Mozilla/5.0 (Linux; Android 7.0; SM-G892A Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/68.0.3440.1805 Mobile Safari/537.36"
+      fs.writeFileSync(__dirname + '/json/result.json', `{ "input":"${name}" }`)
+                win.loadFile('./user.html');
+        }
+    

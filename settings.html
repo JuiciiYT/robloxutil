@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link href="./css/menus.css" rel="stylesheet">
+     <span id="macos"></span>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <nav class="transparent"><a href="./menu.html"><i class="material-icons sidenav-trigger sider">chevron_left</i></a></nav>
+    <ul id="slide-out" class="sidenav uimn">
+      <span class="first">
+        <li class="waves-effect waves-light"><a href="#acc"><i class="material-icons">account_circle</i></a></li>
+        <li class="waves-effect waves-light"><a href="#misc"><i class="material-icons">build</i></a></li>
+      </span>
+    </ul>
+    <script src="./js/inject.js"></script>
+  </head>
+  <body>
+    <div style="padding-left:20px;" class="container">
+<h3 id="acc">Account</h3>
+<h5>Unlink Account <div class="material-icons">logout</div></h5>
+Unlink your Roblox account on this device: <span style="font-weight: bold;" id="device"></span><br><br>
+<button class="btn red waves-effect waves-light modal-trigger" href="#modal1">UNLINK ACCOUNT</button>
+
+<h3 id="misc">Misc</h3>
+Version: <code>v<span id="version"></span></code><br>
+License: <code><span id="depend"></span></code>
+<br><br>
+<date></date> &copy; RBXUtil. All rights reserved. Roblox&trade; is a trademark of Roblox Corporation.
+</div>
+
+
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Are you sure you want to unlink?</h4>
+    <p>The following account you want to unlink is <span style="font-weight: bold;"class="user"></span>.</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="white-text modal-close waves-effect waves-orange btn-flat">NO</a><a href="#!" class="white-text modal-close waves-effect waves-orange btn-flat" onclick="unlink()">YES</a>
+  </div>
+  </div>
+  </body>
+</html>
+<script>
+    const n = new Date()
+  const d = n.getFullYear()
+document.querySelector("date").innerHTML = d;
+const fs = require("fs")
+const $ = require('jquery')
+const shell = require("shelljs")
+
+if (process.platform === "darwin") {
+shell.exec("scutil --get ComputerName", function(code, stdout, stderr) {
+  $("#device").append(stdout)
+})
+}
+
+if (process.platform === "win32") {
+shell.exec("cmd /k hostname", function(code, stdout, stderr) {
+  $("#device").append(stdout)
+})
+}
+
+if (process.platform === "linux") {
+shell.exec("hostname", function(code, stdout, stderr) {
+  $("#device").append(stdout)
+})
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+  });
+
+$.getJSON("./json/link.json", function(data){
+  $(".user").append(data.username)
+})
+
+$.getJSON("./package.json", function(data){
+  $("#version").append(data.version)
+  $("#depend").append(data.license)
+})
+
+function unlink() {
+  fs.writeFile("./json/link.json", "",function(err){
+
+  })
+}
+</script>
+<style>
+  .sidenav {
+    transform: translateX(0%) !important;
+    width:100px;
+  }
+
+  .sider{
+    padding-left: 100px!important;
+  }
+</style>

@@ -1,4 +1,4 @@
 //Detect if Mac
-if (navigator.platform === 'MacIntel' || navigator.platform === 'MacPPC' || navigator.platform === 'Mac68K') {
+if (process.platform = "darwin") {
     document.getElementById("macos").innerHTML = '<link rel="stylesheet" href="./css/mac.css" />'
 }

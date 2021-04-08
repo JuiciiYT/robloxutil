@@ -39,7 +39,7 @@
         </a>
       </div>
       <div class="white-text bottom center sub">
-        <date></date> &copy; RBXUtil. All rights reserved.
+        <date></date> &copy; RBXUtil. All rights reserved.<br> <span id="linkd"></span>
   </div>
     </div>
   </div>
@@ -51,7 +51,12 @@
   </div>
   </div>
   </span>
-  </body>
+  <div class="fixed-action-btn" style="position:absolute;">
+    <a class="btn-floating waves-effect waves-light btn-large transparent top">
+      <i class="large material-icons">settings</i>
+    </a>
+  </div>
+</body>
 </html>
 <script>
   const fs = require('fs')
@@ -63,7 +68,7 @@ const $ = require("jquery")
 $.get("./log/user.log", function(txt){
   if(txt.trim().length > 0) {
     document.getElementById('contents').innerText = txt;
-  document.querySelector('#why').innerHTML = `<a class="red btn waves-effect waves-light" onclick="fs.writeFileSync('./log/user.log', '');window.location.replace(window.location)">Clear History</a>`
+  document.querySelector('#why').innerHTML = `<a class="red btn waves-effect waves-light" onclick="fs.writeFileSync(__dirname + '/log/user.log', '');window.location.replace(window.location)">Clear History</a>`
   }
 })
 const RPC = require("discord-rich-presence")("799757326738259968")
@@ -75,5 +80,17 @@ RPC.updatePresence({
   instance: true,
 });
 
+$.getJSON("json/link.json", function(linked) {
+        if (linked.id.length > 0) {
+          document.getElementById("linkd").innerHTML = `Logged in as ${linked.username}`;
+        }
+      })
 
+      
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'top'
+    });
+  });
 </script>

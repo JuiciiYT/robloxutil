@@ -53,6 +53,7 @@
       .container{color: black!important;}
       .sub, h3{ color: black!important;}
       input { color:black; }
+      .btn-floating .material-icons{color:black!important;}
     }
   
   .sub{

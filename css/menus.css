@@ -10,9 +10,7 @@
     padding:20px!important;
   }
   
-  .waves-effect{
-    display: block!important;
-  }
+  
   
   .bob{
     position: absolute;
@@ -50,6 +48,7 @@
       .sub, h3{ color: black!important;}
       input { color:black; }
       .material-icons{color:black;}
+      .btn-floating .material-icons{color:black!important;}
     }
   
   .sub{
