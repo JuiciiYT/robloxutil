@@ -72,6 +72,7 @@ This is a Roblox Utility App which can be used for various uses.
 ### Examples
 
 * Roblox User Finder
+* Roblox Game Info
 
 
 ### Built With
@@ -86,9 +87,7 @@ This is a Roblox Utility App which can be used for various uses.
 
 To get a local copy up and running follow these simple steps.
 
-### Installation
-
-#### Method 1
+### Using Bash
 
 ```bash
 curl -sS https://raw.githubusercontent.com/RBXUtil/RBXUtil/install/installer.sh | bash
