@@ -34,7 +34,7 @@ body{
   overflow:hidden!important;
 }
 
-#id, #friends, #following, #followers{
+td[id]{
   text-align:right!important;
 }
 

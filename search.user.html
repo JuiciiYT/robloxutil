@@ -51,7 +51,7 @@ $('#search').keypress(function(event) {
         if (event.keyCode == 13) {
             fs.writeFileSync(__dirname + '/json/result.json', `{ "input":"${document.getElementById("search").value}" }`)
             const prependFile = require('prepend-file');
-            prependFile(__dirname + '/log/user.log', document.getElementById("search").value + " - " + datetime + "\n", () => {})
+            prependFile(__dirname + '/log/user.log', document.getElementById("search").value + " [User] - " + datetime + "\n", () => {})
             window.location.replace("./user.html")
 
         }

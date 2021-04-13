@@ -3,6 +3,9 @@ const getUser = require("roblox-user-information")
 $.getJSON("json/result.json", function(result) {
   (async() => {
     await getUser(result.input).then(user => {
+      fs.writeFile("./json/user.json", JSON.stringify(user), function(err){
+
+      })
       const RPC = require("discord-rich-presence")("799757326738259968")
 RPC.updatePresence({
   state: user.username,
@@ -15,7 +18,7 @@ RPC.updatePresence({
       if(user.success == false) {
         window.location.replace("./invalid.html")
       }
-      document.title = user.username + " | RobloxUtil"
+      document.title = user.username + " | RBXUtil"
       document.getElementById("username").innerHTML = user.username;
       document.getElementById("username-nav").innerHTML = user.username;
 

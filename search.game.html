@@ -1,0 +1,154 @@
+<html>
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link href="./css/game.css" rel="stylesheet">
+     <span id="macos"></span>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <nav class="transparent"><a href="./menu.html"><i class="material-icons sidenav-trigger padtop">chevron_left</i></a></nav>
+    <script src="./js/inject.js"></script>
+    <script src="./js/include.js"></script>
+    <script src="./js/loading-done.js"></script>
+    <link rel="stylesheet" href="./css/loading-done.css">
+  </head>
+  <body>
+      <span class="bob">
+      <span class="center">
+    <h3 class="">
+      Enter Game Name
+    </h3>
+</span>
+<div class="row center">
+    <nav class="orange" style="width:900px;">
+        <div class="nav-wrapper">
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+        </div>
+      </nav>
+</div>
+<div class="row images"></div>
+
+          
+</span>
+
+  </body>
+</html>
+<script>
+
+const fs = require("fs")
+const $ = require('jquery')
+var currentdate = new Date();
+var datetime = currentdate.getDay() + "/" + currentdate.getMonth() + "/" + currentdate.getFullYear() + " @ " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+
+
+var input = document.getElementById("search");
+
+                function json(uwu) {
+                    $.getJSON("https://games.roblox.com/v1/games?universeIds=" + uwu, function(gos){
+                        var desc = gos.data[0].description
+                        var devn = gos.data[0].creator.name
+                        var name = gos.data[0].name
+                        var play = gos.data[0].playing
+                        var view = gos.data[0].visits
+                        var pric = gos.data[0].price
+                        var uid = gos.data[0].id
+                        var pid = gos.data[0].rootPlaceId
+
+                        const prependFile = require('prepend-file');
+                        prependFile(__dirname + '/log/user.log', name + " [Game] - " + datetime + "\n", () => {})
+
+                        document.querySelector(".bob").innerHTML = `<div class="centered"><h1>Loading<span id="wait"></span></h1><div class="progress orange"><div class="indeterminate orange darken-4"></div></div>`
+
+                        fs.writeFile("./json/game.json", `{"name": "${name}", "devname": "${devn}", "playing": "${play}", "visits":"${view}", "price":"${pric}", "uid": "${uid}", "pid": "${pid}"}`, function(err){
+
+                    })
+                    fs.writeFile("./txt/game.txt", `${desc}`, function(err){
+
+})
+                    })
+                    setTimeout(function(){window.location.replace("./game.html")}, 1000)
+                }
+
+// Execute a function when the user releases a key on the keyboard
+
+$('#search').keypress(function(event) {
+        if (event.keyCode == 13) {
+            document.querySelector(".images").innerHTML = ""
+            //const prependFile = require('prepend-file');
+            //prependFile(__dirname + '/log/user.log', document.getElementById("search").value + "[Game] - " + datetime + "\n", () => {})
+            var llo = document.getElementById("search").value
+            $.getJSON("https://games.roblox.com/v1/games/list?model.keyword=" + llo.replace(/"/g, "") + "&model.maxRows=10", function(data){
+                $.getJSON("https://thumbnails.roblox.com/v1/games/icons?universeIds=" + data.games[0].universeId + "&size=512x512&format=Png&isCircular=false",function(thumb){
+                    $(".images").append(`<div class="col s3"><a class=""><div class="card" style="width:200px!important;"><div class="card-image waves-effect waves-light null" onclick="json(${data.games[0].universeId})"><img class="gamers" src="${thumb.data[0].imageUrl}" style="width:200px!important;"></div></div></a></div>`)
+                    if (thumb.data[0].imageUrl === null) {
+                        document.querySelector(".null").innerHTML = `<a href="game.html"><img class="gamers" src="./null.png" style="width:200px!important;"></a>`
+                    }
+                })
+                $.getJSON("https://thumbnails.roblox.com/v1/games/icons?universeIds=" + data.games[1].universeId + "&size=512x512&format=Png&isCircular=false",function(thumb){
+                    $(".images").append(`<div class="col s3"><a class=""><div class="card" style="width:200px!important;"><div class="card-image waves-effect waves-light null1" onclick="json(${data.games[1].universeId})"><img class="gamers" src="${thumb.data[0].imageUrl}" style="width:200px!important;"></div></div></a></div>`)
+                    if (thumb.data[0].imageUrl === null) {
+                        document.querySelector(".null1").innerHTML = `<a href="game.html"><img class="gamers" src="./null.png" style="width:200px!important;"></a>`
+                    }
+                })
+                $.getJSON("https://thumbnails.roblox.com/v1/games/icons?universeIds=" + data.games[2].universeId + "&size=512x512&format=Png&isCircular=false",function(thumb){
+                    $(".images").append(`<div class="col s3"><a class=""><div class="card" style="width:200px!important;"><div class="card-image waves-effect waves-light null2" onclick="json(${data.games[2].universeId})"><img class="gamers" src="${thumb.data[0].imageUrl}" style="width:200px!important;"></div></div></a></div>`)
+                    if (thumb.data[0].imageUrl === null) {
+                        document.querySelector(".null2").innerHTML = `<a href="game.html"><img class="gamers" src="./null.png" style="width:200px!important;"></a>`
+                    }
+                })
+                $.getJSON("https://thumbnails.roblox.com/v1/games/icons?universeIds=" + data.games[3].universeId + "&size=512x512&format=Png&isCircular=false",function(thumb){
+                    $(".images").append(`<div class="col s3"><a class=""><div class="card" style="width:200px!important;"><div class="card-image waves-effect waves-light null3" onclick="json(${data.games[3].universeId})"><img class="gamers" src="${thumb.data[0].imageUrl}" style="width:200px!important;"></div></div></a></div>`)
+                    if (thumb.data[0].imageUrl === null) {
+                        document.querySelector(".null3").innerHTML = `<a href="game.html"><img class="gamers" src="./null.png" style="width:200px!important;"></a>`
+                    }
+                })
+                $.getJSON("https://thumbnails.roblox.com/v1/games/icons?universeIds=" + data.games[4].universeId + "&size=512x512&format=Png&isCircular=false",function(thumb){
+                    $(".images").append(`<div class="col s3"><a class=""><div class="card" style="width:200px!important;"><div class="card-image waves-effect waves-light null4" onclick="json(${data.games[4].universeId})"><img class="gamers" src="${thumb.data[0].imageUrl}" style="width:200px!important;"></div></div></a></div>`)
+                    if (thumb.data[0].imageUrl === null) {
+                        document.querySelector(".null4").innerHTML = `<a href="game.html"><img class="gamers" src="./null.png" style="width:200px!important;"></a>`
+                    }
+                })
+                $.getJSON("https://thumbnails.roblox.com/v1/games/icons?universeIds=" + data.games[5].universeId + "&size=512x512&format=Png&isCircular=false",function(thumb){
+                    $(".images").append(`<div class="col s3"><a class=""><div class="card" style="width:200px!important;"><div class="card-image waves-effect waves-light null5" onclick="json(${data.games[5].universeId})"><img class="gamers" src="${thumb.data[0].imageUrl}" style="width:200px!important;"></div></div></a></div>`)
+                    if (thumb.data[0].imageUrl === null) {
+                        document.querySelector(".null5").innerHTML = `<a href="game.html"><img class="gamers" src="./null.png" style="width:200px!important;"></a>`
+                    }
+                })
+                $.getJSON("https://thumbnails.roblox.com/v1/games/icons?universeIds=" + data.games[6].universeId + "&size=512x512&format=Png&isCircular=false",function(thumb){
+                    $(".images").append(`<div class="col s3"><a class=""><div class="card" style="width:200px!important;"><div class="card-image waves-effect waves-light null6" onclick="json(${data.games[6].universeId})"><img class="gamers" src="${thumb.data[0].imageUrl}" style="width:200px!important;"></div></div></a></div>`)
+                    if (thumb.data[0].imageUrl === null) {
+                        document.querySelector(".null6").innerHTML = `<a href="game.html"><img class="gamers" src="./null.png" style="width:200px!important;"></a>`
+                    }
+                })
+                $.getJSON("https://thumbnails.roblox.com/v1/games/icons?universeIds=" + data.games[7].universeId + "&size=512x512&format=Png&isCircular=false",function(thumb){
+                    $(".images").append(`<div class="col s3"><a class=""><div class="card" style="width:200px!important;"><div class="card-image waves-effect waves-light null7" onclick="json(${data.games[7].universeId})"><img class="gamers" src="${thumb.data[0].imageUrl}" style="width:200px!important;"></div></div></a></div>`)
+                    if (thumb.data[0].imageUrl === null) {
+                        document.querySelector(".null7").innerHTML = `<a href="game.html"><img class="gamers" src="./null.png" style="width:200px!important;"></a>`
+                    }
+                })
+                })
+}
+            })
+
+
+
+const RPC = require("discord-rich-presence")("799757326738259968")
+RPC.updatePresence({
+  state: 'Searching for a game',
+  details: 'Main Menu',
+  startTimestamp: Date.now(),
+  largeImageKey: 'icon',
+  smallImageKey: 'electron',
+  instance: true,
+});
+</script>

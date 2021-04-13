@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Not a valid user | RBXUtil</title>
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="icon"
+      href="https://tr.rbxcdn.com/944b783f5e4d781fde088b87e14286ac/352/352/AvatarHeadshot/Png"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+    <div id="macos"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.7.1.js"></script>
+    <script src="https://kit.fontawesome.com/eb84d536b6.js" crossorigin="anonymous"></script>
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="./js/inject.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/loading-done.js"></script>
+  </head>
+  <body>
+    <div class="navbar-fixed">
+      <!-- NAVBAR -->
+      <nav class="orange">
+        <a href="#" data-target="slide-out" class="sidenav-trigger"
+          ><i class="material-icons white-text">menu</i></a
+        >
+        <div class="right">
+         <i class="material-icons">sports_esports</i>
+        </div>
+        <div class="right">
+          Search for a game
+        </div>
+      </nav>
+    </div>
+    <ul id="slide-out" class="sidenav">
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <div id="output"><img src="https://images.unsplash.com/photo-1488905373347-189b5464fd44?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=130"></div>
+          </div>
+          <a id="headshot"></a>
+          <a><span class="white-text name" id="username-nav"></span></a>
+          <a
+            ><span class="white-text email" id="status-nav"></span></a
+          >
+        </div>
+      </li>
+      <li>
+        <a href="./commands.html" class="waves-effect"><i class="material-icons">keyboard</i>Commands</a>
+      </li>
+      <li>
+        <a href="./menu.html" class="waves-effect"><i class="material-icons">exit_to_app</i>Go Back</a>
+      </li>
+      <li><div class="divider"></div></li>
+      <li><a class="subheader">Other</a></li>
+      <li><a class="waves-effect modal-trigger" href="#modal1">Change Sidenav BG</a></li>
+    </ul>
+
+    <!-- CONTAINER & ROW-->
+    <div class="container">
+      <!-- USERNAME -->
+      <h2 class="h4" style="overflow: hidden!important;">
+        <span id="premium"></span><span id="linked"></span><strong id="username">Loading<span id="wait"></span></strong>
+      </h2>
+
+      <!-- USER STATUS-->
+      <div class="row">
+        <div class="col s6">
+          <div class="card">
+            <div class="card-image">
+              <div id="avatars"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROBLOX PROFILE-->
+        <div class="col s6">
+          <div class="card">
+            <h5 class="padtop">Roblox Profile <i class="material-icons">account_circle</i></h5>
+            <div class="card-content">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Universe ID</td>
+                    <td id="uid">32300043</td>
+                  </tr>
+                  <tr>
+                    <td>Place ID</td>
+                    <td id="pid">1234567890</td>
+                  </tr>
+                  <tr>
+                    <td>Creator</td>
+                    <td id="creator">JustA13</td>
+                  </tr>
+                  <tr>
+                    <td>Players Online</td>
+                    <td id="player">203</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- USERNAME HISTORY-->
+
+      </div>
+
+      <!--INFO-->
+      <div class="row bottom">
+        <div class="col s12">
+        <div class="card">
+          <div class="divider-vert">
+  
+          </div>
+        <!--<div class="col s4">
+            <h5 class="padtop">Information <i class="material-icons">insert_chart</i></h5>
+            <div class="card-content">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Location</td>
+                    <td id="location"><span id="flag"><i class="em em-flag-gb"></i></span> United Kingdom</td>
+                  </tr>
+                  <tr>
+                    <td>Accounts</td>
+                    <td id="accounts"><i class="fab fa-discord blurple-text"></i>&nbsp;<i class="fab fa-reddit-square orange-text"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>-->
+
+        <!-- Friends -->
+        <div class="col s12">
+          <h5 class="padtop">Game Description <i class="material-icons">notes</i></h5>
+            <div class="card-content" style="white-space:pre;"><div id="friend-list"></div></div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<div id="modal1" class="modal">
+   <div class="modal-content">
+      <h4 class="black-text">Add Image URL</h4>
+           <div class="input-field">
+             <input id="email_inline" type="url" class="validate">
+             <label for="email_inline">Image URL</label>
+             <span class="helper-text" data-error="Enter Valid URL" data-success=""></span>
+           </div>
+         </div>
+   <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-orange orange-text btn-flat">CANCEL</a><a href="#!" onclick='finished()' class="modal-close waves-effect waves-orange orange-text btn-flat">DONE</a>
+   </div>
+   <style>
+    input[type=url]:focus + label {
+    color: orange!important;
+  }
+  /* label underline focus color */
+  input[type=url]:focus {
+    border-bottom: 1px solid orange!important;
+    box-shadow: 0 1px 0 0 orange!important;
+  }
+  .prefix.active {
+    color:  orange!important;
+  }
+   </style>
+ </div>
+ <script>
+   
+ </script>
