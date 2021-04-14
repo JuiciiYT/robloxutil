@@ -1,4 +1,4 @@
-echo "If this fails you probably don't have Node.js or git"
+echo "[⚠️] Git and Node.js must be installed"
 git clone -b v1.0.3 https://github.com/RBXUtil/RBXUtil.git && cd RBXUtil
-npm i && echo "Installation Finished! You may now run the app." && echo "Directory: ./robloxutil"
-echo "Run using npm start"
+npm i && echo "[🎉] Installation Finished!"
+echo "[📝] Run the command 'cd RBXUtil' and 'npm start'"
