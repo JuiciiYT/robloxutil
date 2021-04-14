@@ -1,5 +1,4 @@
 read -p "[⚠️ ] Git and Node.js must be installed. Enter 'Ok' to continue." -n 1 -r
-echo    # (optional) move to a new line
 if [[ $REPLY = Ok ]]
 then
     echo "[🐱] Cloning Github Repo."
