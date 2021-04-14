@@ -2,8 +2,8 @@ read -p "[⚠️ ] Git and Node.js must be installed. Enter 'Ok' to continue." -
 if [[ $REPLY = Ok ]]
 then
     echo "[🐱] Cloning Github Repo."
-    git clone -b v1.0.3 https://github.com/RBXUtil/RBXUtil.git > /dev/null 2>&1 && cd RBXUtil
+    git clone -b v1.0.3 https://github.com/RBXUtil/RBXUtil.git > /dev/null && cd RBXUtil
     echo "[📦] Installing Node.js dependencies."
-    npm i > /dev/null 2>&1 && echo "[🎉] Installation Finished!"
+    npm i > /dev/null && echo "[🎉] Installation Finished!"
     echo "[📝] Run the command 'cd RBXUtil' and 'npm start'"
 fi
