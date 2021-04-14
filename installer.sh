@@ -6,6 +6,6 @@ echo "[📦] Installing Node.js dependencies."
 sleep 3
 cd RBXUtil; npm i && sleep 2 && echo "[🎉] Installation Finished!"
 location=pwd
-echo "[📝] Installed in: " + location + "/RBXUtil"
+echo "[📝] Installed in: $location/RBXUtil"
 echo "[📝] Run the command 'cd RBXUtil' and 'npm start'"
 
