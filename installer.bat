@@ -1,4 +1,5 @@
 @echo off
+Rem I will turn into a convertable... LETS GOOOOO!
 echo [ALERT] Git and Node.js must be installed.
 echo [INFO] Cloning Github Repo.
 timeout 2
