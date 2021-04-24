@@ -199,3 +199,12 @@ position:relative;
 user-select:none;
 will-change:contents;
 }
+
+*::-webkit-scrollbar{
+  display:none;
+}
+
+*{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
