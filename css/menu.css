@@ -31,6 +31,12 @@
 .bsu{
     padding-left: 60px!Important;
   }
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html {
+  font-family: Roboto;
+}
   
   /* Dark Mode */
     @media (prefers-color-scheme: dark) {
