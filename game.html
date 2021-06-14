@@ -115,6 +115,8 @@
                   </tr>
                 </tbody>
               </table>
+              <br>
+              &nbsp;<span id="play"></span>
             </div>
           </div>
         </div>
@@ -151,8 +153,9 @@
         <!-- Friends -->
         <div class="col s12">
           <h5 class="padtop">Game Description <i class="material-icons">notes</i></h5>
-            <div class="card-content" style="white-space:pre;"><div id="friend-list"></div></div>
+            <div class="card-content" style="white-space:pre;"><p style="text-overflow: ellipsis;overflow: hidden;" id="friend-list"></p></div>
         </div>
+        
       </div>
       </div>
       </div>
@@ -187,5 +190,30 @@
    </style>
  </div>
  <script>
-   
+   var removeAttr = jQuery.fn.removeAttr;
+jQuery.fn.removeAttr = function() {
+
+  if (!arguments.length) {
+    this.each(function() {
+
+      // Looping attributes array in reverse direction
+      // to avoid skipping items due to the changing length
+      // when removing them on every iteration.
+      for (var i = this.attributes.length -1; i >= 0 ; i--) {
+        jQuery(this).removeAttr(this.attributes[i].name);
+      }
+    });
+
+    return this;
+  }
+
+  return removeAttr.apply(this, arguments);
+};
+
+$('.card_back').find('*').each(function( index, element ) {
+  $(element).removeClass();
+  $(element).removeAttr();
+});
  </script>
+
+<script src="./offline.js"></script>

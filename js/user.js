@@ -1,79 +1,84 @@
-const getUser = require("roblox-user-information")
+const { data } = require("jquery");
 
-$.getJSON("json/result.json", function(result) {
-  (async() => {
-    await getUser(result.input).then(user => {
-      fs.writeFile("./json/user.json", JSON.stringify(user), function(err){
+function repeat(func, times) {
+  func();
+  times && --times && repeat(func, times);
+}
 
-      })
-      const RPC = require("discord-rich-presence")("799757326738259968")
-RPC.updatePresence({
-  state: user.username,
-  details: 'User',
-  startTimestamp: Date.now(),
-  largeImageKey: 'icon',
-  smallImageKey: 'electron',
-  instance: true,
-});
-      if(user.success == false) {
-        window.location.replace("./invalid.html")
-      }
-      document.title = user.username + " | RBXUtil"
-      document.getElementById("username").innerHTML = user.username;
-      document.getElementById("username-nav").innerHTML = user.username;
+$.getJSON("./json/result.json", function (result) {
+  $.getJSON("https://api.roblox.com/users/get-by-username?username=" + result.input, function (userRBX) {
+    $.getJSON("https://users.roblox.com/v1/users/"+ userRBX.Id, function (usersi){
 
-      $.getJSON("json/link.json", function(linked) {
-        if (linked.id.length === 0) {
-          document.getElementById("claim").innerHTML = `<a href="./claim.html?id=${user.id}&username=${user.username}" class="btn">CLAIM THIS ACCOUNT</a>`;
-        } else {
-          document.getElementById("claim").innerHTML = `<a href="./claim.html?id=${user.id}&username=${user.username}" class="btn disabled">CLAIM THIS ACCOUNT</a>`;
-        } 
-        
-        if (linked.username === user.username) {
-          document.getElementById("linked").innerHTML = `<span style="font-size:100%;" class="material-icons">verified_user</span>&nbsp;`
+      const cheerio = require('cheerio'),
+      axios = require('axios'),
+      url = `https://web.roblox.com/users/` + userRBX.Id + "/profile";
+      
+axios.get(url)
+    .then((response) => {
+        let $ = cheerio.load(response.data);
+        if ($('.icon-premium-medium').length === 1) {
+          document.querySelector("#premium").innerHTML = "<img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOCAyOCI+PGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNMjggMjRhNCA0IDAgMDEtNCA0SDE0di00aDEwVjRINHYyNGE0IDQgMCAwMS00LTRWNGE0IDQgMCAwMTQtNGgyMGE0IDQgMCAwMTQgNHptLTctN3Y0aC03di00aDN2LTZoLTZ2MTdIN1Y3aDE0djEweiIgZmlsbD0ibm9uZSIgY2xpcC1ydWxlPSJldmVub2RkIi8+PC9jbGlwUGF0aD48L2RlZnM+PGcgY2xpcC1wYXRoPSJ1cmwoI2EpIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNLTUtNWgzOHYzOEgtNXoiLz48L2c+PC9zdmc+' width='5%' style='padding-right:10px;'>"
         }
+    }).catch(function (e) {
+    console.log(e);
+});
+
+      // Usernames
+      document.getElementById("username").innerHTML = usersi.displayName;
+      document.getElementById("username-nav").innerHTML = usersi.displayName + ` (@${usersi.name})`;
+      document.getElementById("disp").innerHTML = "@" + usersi.name;
+
+      // ID
+      document.getElementById("id").innerHTML = userRBX.Id;
+
+      // CLAIM
+      document.getElementById("claim").innerHTML = `<a href="./claim.html?id=${userRBX.Id}&username=${userRBX.username}" class="btn">CLAIM THIS ACCOUNT</a>`;
+
+      $.getJSON("https://friends.roblox.com/v1/users/" + userRBX.Id + "/friends/count", function(friends) {
+        $.getJSON("https://friends.roblox.com/v1/users/" + userRBX.Id + "/friends", function(friends2) {
+          console.log()
+          document.getElementById("friends").innerHTML = friends.count;
+          if (friends.count == 0) {
+            document.getElementById("superb").innerHTML = "This person's a bit lonely. They have no friends. :("
+          } else {
+            for (let step = 0; step < friends2.data.length; step++) {
+                $('#superb').append(`<div class="chip"><img src="https://www.roblox.com/headshot-thumbnail/image?userId=${friends2.data[step].id}&width=60&height=60&format=png"/>${friends2.data[step].displayName}</div>`)
+            }       
+          }
+        })
       })
 
-      const axios = require('axios');
-      const cheerio = require('cheerio');
-    
-        const url = 'https://web.roblox.com/users/'+ user.id +'/profile';
-    
-        axios(url)
-          .then(response => {
-            const html = response.data;
-            const scrape = cheerio.load(html);
-            const statsTable = scrape('.icon-premium-medium');
-            if (statsTable.length === 1) {
-              document.getElementById("premium").innerHTML = "<img style='width:46px;' src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODgiIGhlaWdodD0iODgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTgwIDBhOCA4IDAgMCAxIDggOHY3MmE4IDggMCAwIDEtNy43NSA3Ljk5Nkw4MCA4OEg0MnYtOGgzOFY4SDh2ODBhOCA4IDAgMCAxLTgtOFY4QTggOCAwIDAgMSA3Ljc1LjAwNEw4IDBoNzJ6bS02IDE0djYwaC04VjIySDIydjY2aC04VjE0aDYwek00MiA2MHYtOGgxMFYzNkgzNnY1MmgtOFYyOGgzMnYzMkg0MnptMjQgNnY4SDQydi04aDI0eiIgZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+'>&nbsp;"
-            }
-          })
-          .catch(console.error);
-          document.getElementById("id").innerHTML = user.id;
-      document.getElementById("claim").innerHTML = `<a href="./claim.html?id=${user.id}&username=${user.username}" class="btn">CLAIM THIS ACCOUNT</a>`;
-      document.getElementById("friends").innerHTML = user.friends.count;
-      document.getElementById("following").innerHTML = user.following.count;
-      document.getElementById("followers").innerHTML = user.followers.count;
-      document.getElementById("followers").innerHTML = user.followers.count;
-      document.getElementById("status1").innerHTML = user.last_online;
-      document.getElementById("status-nav").innerHTML = user.last_online;
+      $.getJSON("https://friends.roblox.com/v1/users/" + userRBX.Id + "/followers/count", function(follower) {
+        document.getElementById("followers").innerHTML = follower.count;
+      })
 
-      if (user.last_online !== "Online right now"){
-         document.getElementById("status2").innerHTML = '<div class="determinate orange" style="width:100%;"></div>'
-      }
-
-       document.getElementById('headshot').innerHTML = `<img class="circle" src="https://www.roblox.com/headshot-thumbnail/image?userId=${user.id}&width=352&height=352&format=png">`;
-       document.getElementById("avatar").innerHTML = `<img src="https://www.roblox.com/avatar-thumbnail/image?userId=${user.id}&width=352&height=352&format=png">`
-
-       if (user.friends.count == 0) {
-        document.getElementById("friends-list").innerHTML = "This person's a bit lonely. They have no friends. :("
-       } else {
-        document.getElementById("friends-list").innerHTML = `<div class="card-panel grey lighten-5 z-depth-1"><div class="row valign-wrapper black-text">${user.friends.friends.join(' • ')}</div>`
+      $.getJSON("https://friends.roblox.com/v1/users/" + userRBX.Id + "/followings/count", function(following) {
+        document.getElementById("following").innerHTML = following.count;
+      })
+      
+      //
+      //document.getElementById("followers").innerHTML = usersi.followers.count;
+      $.getJSON("https://api.roblox.com/users/" + userRBX.Id + "/onlinestatus/", function(status) {
+        if (status.IsOnline == false){
+          document.getElementById("status2").innerHTML = '<div class="determinate orange" style="width:100%;"></div>'
        }
-   })
-  })() 
+
+      if(status.IsOnline == false) {
+        document.getElementById("status1").innerHTML = "Offline";
+        document.getElementById("status-nav").innerHTML = "Offline";
+      } else {
+        document.getElementById("status1").innerHTML = "Online";
+        document.getElementById("status-nav").innerHTML = "Online";
+          if (status.LastLocation != "Online") {
+            document.getElementById("status1").innerHTML = status.LastLocation;
+            document.getElementById("status-nav").innerHTML = status.LastLocation;
+          }
+      }
+    })
+
+      document.getElementById('headshot').innerHTML = `<img class="circle" src="https://www.roblox.com/headshot-thumbnail/image?userId=${userRBX.Id}&width=352&height=352&format=png">`;
+      document.getElementById("avatar").innerHTML = `<img src="https://www.roblox.com/avatar-thumbnail/image?userId=${userRBX.Id}&width=352&height=352&format=png">`
+    })
+  })
 })
-
-
-  
 

@@ -13,7 +13,8 @@ _________________________________________
 
 // VARIABLES
 
-const { app, BrowserWindow, TouchBar, shell, Menu, MenuItem, globalShortcut }                  = require('electron');
+const { app, BrowserWindow, TouchBar, shell, Menu, MenuItem, globalShortcut, nativeImage }                  = require('electron');
+const path = require('path')
 const { TouchBarLabel, TouchBarButton, TouchBarSpacer }                                        = TouchBar
 const fs                                                                                       = require('fs')
 const menu                                                                                     = new Menu()
@@ -33,6 +34,7 @@ app.on('window-all-closed', () => {
   }
 })
 
+
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow()
@@ -41,6 +43,8 @@ app.on('activate', () => {
     })
   }
 })
+
+
 
 // MENU ITEMS and COMMANDS
 menu.append(new MenuItem({
@@ -100,6 +104,24 @@ function createWindow () {
         nodeIntegration: true
       }
   })
+  let icon = new TouchBarButton({
+    'backgroundColor': '#000000',
+    'label': 'RBXUtil',
+    'icon': nativeImage.createFromPath(path.join(__dirname, 'assets/windows.png')).resize({
+      width: 32,
+      height: 32,
+    }),
+    'iconPosition': 'left',
+    click: () => {
+      win.loadFile("./menu.html")
+    }
+  });
+  const touchBar = new TouchBar({
+    items: [
+      icon
+    ]
+  })
+  win.setTouchBar(touchBar)
   win.webContents.userAgent = "Mozilla/5.0 (Linux; Android 7.0; SM-G892A Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/68.0.3440.1805 Mobile Safari/537.36"
             win.loadFile('./menu.html');
     }
@@ -124,3 +146,40 @@ function createWindow () {
                 win.loadFile('./user.html');
         }
     
+
+        function createWindow3 () {
+
+          // PROMPT FOR USERNAME
+          RPC.updatePresence({
+            instance: false
+          })
+            // VARIABLE FOR WINDOW
+            const win = new BrowserWindow({
+              width: 1500,
+              height: 1060,
+              titleBarStyle: 'hiddenInset',
+              webPreferences: {
+                nodeIntegration: false
+              }
+          })
+          let icon = new TouchBarButton({
+            'backgroundColor': '#000000',
+            'label': 'RBXUtil',
+            'icon': nativeImage.createFromPath(path.join(__dirname, 'assets/windows.png')).resize({
+              width: 32,
+              height: 32,
+            }),
+            'iconPosition': 'left',
+            click: () => {
+              win.loadFile("./menu.html")
+            }
+          });
+          const touchBar = new TouchBar({
+            items: [
+              icon
+            ]
+          })
+          win.setTouchBar(touchBar)
+          win.webContents.userAgent = "Mozilla/5.0 (Linux; Android 7.0; SM-G892A Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/68.0.3440.1805 Mobile Safari/537.36"
+                    win.loadURL('https://rbxutil.ayomideilesanmi.repl.co');
+            }

@@ -23,8 +23,9 @@
     </h3>
 </span>
 <div class="row center">
+
     <nav class="orange" style="width:900px;">
-        <div class="nav-wrapper">
+        <div class="nav-wrapper dropdown-trigger">
             <div class="input-field">
               <input id="search" type="search" required>
               <label class="label-icon" for="search"><i class="material-icons">search</i></label>
@@ -34,6 +35,10 @@
       </nav>
 </div>
 </span>
+<ul id='dropdown1' class='black-text dropdown-content'>
+  <li><a class='black-text' id="textdata" href="#!"></a></li>
+  <li><a class='black-text' href="#!">two</a></li>
+</ul>
   </body>
 </html>
 <script>
@@ -66,4 +71,14 @@ RPC.updatePresence({
   smallImageKey: 'electron',
   instance: true,
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems);
+  });
+
+  $("#search").change(function() {
+   document.querySelector("#textdata").innerText = $("#search").val()
+});
 </script>
+<script src="./offline.js"></script>

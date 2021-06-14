@@ -20,14 +20,6 @@
     "username"
   ],
   "build": {
-    "appId": "rbxutil.id",
-    "win": {
-      "icon": "./assets/windows.png"
-    },
-    "mac": {
-      "icon": "./assets/mac.icns",
-      "category": "public.app-category.utilities"
-    },
     "protocols": {
       "name": "rbxutil-default",
       "schemes": [
@@ -38,18 +30,20 @@
   "author": "JuiciiYT",
   "license": "MIT",
   "dependencies": {
-    "@material/card": "^10.0.0",
-    "@material/ripple": "^10.0.0",
-    "autolinker": "^3.14.3",
     "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "btoa": "^1.2.1",
     "cheerio": "^1.0.0-rc.5",
     "discord-rich-presence": "0.0.8",
+    "express": "^4.17.1",
     "jquery": "^3.5.1",
     "node-fetch": "^2.6.1",
     "prepend-file": "^2.0.0",
+    "process": "^0.11.10",
     "request": "^2.88.2",
     "roblox-user-information": "^1.0.0",
-    "shelljs": "^0.8.4"
+    "shelljs": "^0.8.4",
+    "system-commands": "^1.1.7"
   },
   "bugs": {
     "url": "https://github.com/JuiciiYT/robloxutil/issues"
@@ -64,34 +58,5 @@
     "@electron-forge/maker-wix": "^6.0.0-beta.54",
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
     "electron": "^11.3.0"
-  },
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "RBXUtil"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ],
-          "config": {
-            "icon": "./assets/mac.icns"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-wix",
-          "config": {
-            "language": 1033,
-            "manufacturer": "RBXUtil Inc."
-          }
-        }
-      ]
-    }
   }
 }

@@ -1,6 +1,10 @@
 .sike{
     font-size:80px!important;
   }
+
+  * a{
+    cursor: pointer!important;
+  }
   
   .center{
     font-size:20px;

@@ -2,6 +2,10 @@
   padding-top:20px;
 }
 
+* a{
+  cursor: pointer!important;
+}
+
 .padpx h4{
   padding-left:6px;
   padding-right:6px;

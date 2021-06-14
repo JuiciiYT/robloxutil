@@ -1,0 +1,105 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/css/index.css">
+</head>
+
+<body>
+  <input class="input" placeholder="Tap on the virtual keyboard to start" />
+  <div class="simple-keyboard"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
+  <script type='module'>
+const Keyboard = window.SimpleKeyboard.default;
+
+const myKeyboard = new Keyboard({
+  onChange: input => onChange(input),
+  onKeyPress: button => onKeyPress(button)
+});
+
+
+function onChange(input) {
+  document.querySelector(".input").value = input;
+}
+
+
+function onKeyPress(button) {
+}
+
+function removeAniFrom(_el) {
+  if(_el.classList.contains('ani')) _el.classList.remove('ani')
+}
+
+addEventListener('click', e => {
+  const _t = e.target;
+  
+  if(_t.tagName.toLowerCase() === 'div') {
+    removeAniFrom(_t);
+    
+    const rect = _t.getBoundingClientRect();
+    
+    _t.style.setProperty('--x', `${e.clientX - rect.x}px`)
+    _t.style.setProperty('--y', `${e.clientY - rect.y}px`)
+    _t.classList.add('ani')
+  }
+}, false);
+
+addEventListener('animationend', e => {  
+  removeAniFrom(e.target)
+}, false);
+  </script>
+
+  <style>
+      * .hg-button.hg-functionBtn.hg-activeButton, .hg-button.hg-standardBtn.hg-activeButton {
+          background:white;
+      }
+
+      body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@property --a {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: false
+}
+
+@property --r {
+  syntax: '<length-percentage>';
+  initial-value: 0%;
+  inherits: false
+}
+
+.hg-button {
+  position: relative;
+  overflow: hidden;
+  background: 
+    radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, var(--a)) calc(var(--r) - 1px), transparent var(--r))
+    #6200ee;
+  padding: 1rem 2rem;
+  font: 1.5rem 'Roboto', sans-serif;
+  outline: 0;
+  border: 0;
+  border-radius: .25rem;
+  box-shadow: 0 0 .5rem rgba(0, 0, 0, .3); /* black with 30% opacity */
+  animation: a .6s linear;
+  cursor: pointer;
+}
+
+.hg-button.ani { animation-name: fade, grow }
+
+@keyframes fade { 0% { --a: .7 } }
+@keyframes grow { to { --r: 200% } }
+  </style>
+</body>
+</html>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
