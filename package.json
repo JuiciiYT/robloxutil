@@ -1,6 +1,6 @@
 {
   "name": "RBXUtil",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "An electron app which can be used for various Roblox Utilities.",
   "main": "index.js",
   "scripts": {

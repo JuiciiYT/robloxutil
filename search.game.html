@@ -7,6 +7,7 @@
     />
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <link href="./css/game.css" rel="stylesheet">
+     <link rel="stylesheet" href="./themes/style.css" />
      <span id="macos"></span>
 
     <!-- Compiled and minified JavaScript -->
@@ -87,10 +88,11 @@ $('#search').keypress(function(event) {
             //const prependFile = require('prepend-file');
             //prependFile(__dirname + '/log/user.log', document.getElementById("search").value + "[Game] - " + datetime + "\n", () => {})
             var llo = document.getElementById("search").value
-            $.getJSON("https://games.roblox.com/v1/games/list?model.keyword=" + llo.replace(/"/g, "") + "&model.maxRows=10", function(data){
-                for (let step = 0; step < data.games.length; step++) {
+            $.getJSON("https://games.roblox.com/v1/games/list?model.keyword=" + llo.replace(/"/g, "") + "&model.maxRows=12", function(data){
+                for (let step = 0; step < data.games.length - 1; step++) {
                     $.getJSON("https://thumbnails.roblox.com/v1/games/icons?universeIds=" + data.games[step].universeId + "&size=512x512&format=Png&isCircular=false",function(thumb){
-                        $(".images").append(`<div class="col s3"><a class=""><div class="card" style="width:200px!important;"><div class="card-image waves-effect waves-light null" onclick="json(${data.games[step].universeId})"><img class="gamers" src="${thumb.data[step].imageUrl}" style="width:200px!important;"></div></div></a></div>`)
+                      console.log(thumb)
+                        $(".images").append(`<div class="col s3"><a class=""><div class="card" style="width:200px!important;"><div class="card-image waves-effect waves-light null" onclick="json(${data.games[step].universeId})"><img class="gamers" src="${thumb.data[0].imageUrl}" style="width:200px!important;"></div></div></a></div>`)
                         if (thumb.data[step].imageUrl === null) {
                             document.querySelector(".null").innerHTML = `<a href="game.html"><img class="gamers" src="./null.png" style="width:200px!important;"></a>`
                         }

@@ -13,6 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./themes/style.css" />
     <link
       rel="icon"
       href="https://tr.rbxcdn.com/944b783f5e4d781fde088b87e14286ac/352/352/AvatarHeadshot/Png"
@@ -53,7 +54,7 @@
       <li>
         <div class="user-view">
           <div class="background">
-            <div id="output"><img src="https://images.unsplash.com/photo-1488905373347-189b5464fd44?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=130"></div>
+            <div id="output"></div>
           </div>
           <a id="headshot"></a>
           <a><span class="white-text name" id="username-nav"></span></a>
@@ -68,16 +69,13 @@
       <li>
         <a href="./menu.html" class="waves-effect"><i class="material-icons">exit_to_app</i>Go Back</a>
       </li>
-      <li><div class="divider"></div></li>
-      <li><a class="subheader">Other</a></li>
-      <li><a class="waves-effect modal-trigger" href="#modal1">Change Sidenav BG</a></li>
     </ul>
 
     <!-- CONTAINER & ROW-->
     <div class="container">
       <!-- USERNAME --><br>
       <span class="h4" style="padding-top:90px!important;overflow: hidden!important;font-size:55px;">
-        <span id="premium"></span><span id="linked"></span><strong id="username">Loading<span id="wait"></span><br></strong>
+        <span id="premium"></span><span id="linked"></span><span id="dev"></span><strong id="username">Loading<span id="wait"></span><br></strong>
       </span><br>
       <i style="font-size: 24px;" class="h4 grey-text" id="disp"></i>
       <!-- USER STATUS-->
@@ -189,7 +187,7 @@
            </div>
          </div>
    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-orange orange-text btn-flat">CANCEL</a><a href="#!" onclick='finished()' class="modal-close waves-effect waves-orange orange-text btn-flat">DONE</a>
+      <a href="#!" class="modal-close waves-effect waves-light orange-text btn-flat">CANCEL</a><a href="#!" onclick='finished()' class="modal-close waves-effect waves-light orange-text btn-flat">DONE</a>
    </div>
    <style>
     input[type=url]:focus + label {

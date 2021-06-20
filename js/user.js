@@ -22,7 +22,11 @@ axios.get(url)
     }).catch(function (e) {
     console.log(e);
 });
-
+      $.getJSON("/json/link.json", function(linked) {
+        if (linked.username == usersi.name) {
+          document.querySelector("#linked").innerHTML = "<h1 class='material-icons'>admin_panel_settings</h1>"
+        }
+      })
       // Usernames
       document.getElementById("username").innerHTML = usersi.displayName;
       document.getElementById("username-nav").innerHTML = usersi.displayName + ` (@${usersi.name})`;
